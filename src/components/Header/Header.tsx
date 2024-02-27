@@ -1,4 +1,4 @@
-import DarkModeButton from "../DarkModeButton";
+import DarkModeButton from "./DarkModeButton";
 import AsteroidsBackground from "./AsteroidsBackground";
 import Nav from "./Nav";
 import TitleCard from "./TitleCard";
