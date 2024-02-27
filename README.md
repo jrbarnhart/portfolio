@@ -17,7 +17,7 @@ This project serves as a showcase of my skills, experiences, and projects. It's 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/jrbarnhart/portfolio.git
    ```
 
 2. Navigate to project directory:
