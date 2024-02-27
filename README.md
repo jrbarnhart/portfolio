@@ -9,7 +9,7 @@ This project serves as a showcase of my skills, experiences, and projects. It's 
 ## Technologies Used
 
 - [Vite](https://vitejs.dev/): A fast build tool that provides a lightning-fast development server.
-- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [React](https://react.dev/): A JavaScript library for building user interfaces.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for quickly building custom designs.
 
 ## Setup Instructions
