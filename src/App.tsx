@@ -1,10 +1,9 @@
-import DarkModeButton from "./components/DarkModeButton";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <p>Hello World!</p>
-      <DarkModeButton />
+      <Header />
     </>
   );
 }
