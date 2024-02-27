@@ -1,11 +1,14 @@
 import DarkModeButton from "../DarkModeButton";
+import AsteroidsBackground from "./AsteroidsBackground";
+import Nav from "./Nav";
+import TitleCard from "./TitleCard";
 
 const Header = () => {
   return (
     <>
-      <p>This is the header background game!</p>
-      <p>This is the title card!</p>
-      <p>This is the nav!</p>
+      <AsteroidsBackground />
+      <TitleCard />
+      <Nav />
       <DarkModeButton />
     </>
   );
