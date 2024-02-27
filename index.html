@@ -5,6 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joshua Barnhart</title>
+    <script>
+      const storedDarkmodePref = localStorage.getItem("darkmode");
+
+      // No stored preference for darkmode found
+      if (!storedDarkmodePref) {
+        const sysDarkmodePref = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        );
+        if (sysDarkmodePref.matches) {
+          document.documentElement.classList.add("dark");
+        }
+      } else {
+        // Use the stored preference
+        if (storedDarkmodePref === "true") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+    </script>
   </head>
   <body class="dark:bg-neutral-700 dark:text-neutral-50">
     <div id="root"></div>
