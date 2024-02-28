@@ -6,7 +6,7 @@ import DarkmodeContext from "../../contexts/DarkmodeContext";
 const AsteroidsBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const initialDrawDone = useRef<boolean>(false);
+  const canvasInitialized = useRef<boolean>(false);
 
   const { darkmode } = useContext(DarkmodeContext);
 
@@ -14,6 +14,9 @@ const AsteroidsBackground = () => {
     if (canvasCtxRef.current && canvasRef.current) {
       console.log("Drawing circles...");
       const ctx = canvasCtxRef.current;
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
 
       // Draw some random circles
       for (let i = 0; i < 9; i++) {
@@ -27,9 +30,9 @@ const AsteroidsBackground = () => {
     }
   }, []);
 
+  // Initialize canvas
   useEffect(() => {
-    // Initialize canvas
-    if (canvasRef.current && !initialDrawDone.current) {
+    if (canvasRef.current && !canvasInitialized.current) {
       console.log("Initializing canvas...");
       const canvas = canvasRef.current;
       canvasCtxRef.current = canvas.getContext("2d");
@@ -37,11 +40,17 @@ const AsteroidsBackground = () => {
       // as the canvas element on the page
       canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
 
-      const color = darkmode === "true" ? "black" : "white";
-      drawCircles(color);
-      initialDrawDone.current = true;
+      canvasInitialized.current = true;
     }
-  }, [drawCircles, darkmode]);
+  }, []);
+
+  // Draw circles
+  useEffect(() => {
+    const color = darkmode === "true" ? "black" : "white";
+    if (canvasInitialized.current) {
+      drawCircles(color);
+    }
+  }, [darkmode, drawCircles]);
 
   return (
     <canvas
