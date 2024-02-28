@@ -1,31 +1,47 @@
 // This component is an html canvas that displays the asteroids banner game
 
-import { useEffect, useRef } from "react";
+import { useCallback, useContext, useEffect, useRef } from "react";
+import DarkmodeContext from "../../contexts/DarkmodeContext";
 
 const AsteroidsBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const initialDrawDone = useRef<boolean>(false);
 
-  useEffect(() => {
-    // Initialize canvasCtxRef
-    if (canvasRef.current) {
-      const canvas = canvasRef.current;
-      canvasCtxRef.current = canvas.getContext("2d");
-      // Change the width of the canvas’ inner drawing surface so it’s the same aspect ratio
-      // as the canvas element on the page
-      canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
+  const { darkmode } = useContext(DarkmodeContext);
+
+  const drawCircles = useCallback((color: string) => {
+    if (canvasCtxRef.current && canvasRef.current) {
+      console.log("Drawing circles...");
       const ctx = canvasCtxRef.current;
 
       // Draw some random circles
       for (let i = 0; i < 9; i++) {
         const x = canvasRef.current.width * Math.random();
         const y = canvasRef.current.height * Math.random();
-        ctx?.beginPath();
-        ctx?.arc(x, y, 40, 0, 2 * Math.PI);
-        ctx?.stroke();
+        ctx.beginPath();
+        ctx.arc(x, y, 40, 0, 2 * Math.PI);
+        ctx.strokeStyle = color;
+        ctx.stroke();
       }
     }
   }, []);
+
+  useEffect(() => {
+    // Initialize canvas
+    if (canvasRef.current && !initialDrawDone.current) {
+      console.log("Initializing canvas...");
+      const canvas = canvasRef.current;
+      canvasCtxRef.current = canvas.getContext("2d");
+      // Change the width of the canvas’ inner drawing surface so it’s the same aspect ratio
+      // as the canvas element on the page
+      canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
+
+      const color = darkmode === "true" ? "black" : "white";
+      drawCircles(color);
+      initialDrawDone.current = true;
+    }
+  }, [drawCircles, darkmode]);
 
   return (
     <canvas
