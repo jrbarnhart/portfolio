@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import About from "./components/About";
 import Contact from "./components/Contact/Contact";
@@ -9,6 +9,18 @@ import DarkmodeContext from "./contexts/DarkmodeContext";
 
 function App() {
   const [darkmode, setDarkmode] = useState(localStorage.getItem("darkmode"));
+
+  // Set initial darkmode state using prefers-color-scheme if no local storage item
+  useEffect(() => {
+    if (darkmode === null) {
+      const sysDarkmodePref = window.matchMedia("(prefers-color-scheme: dark)");
+      if (sysDarkmodePref.matches) {
+        setDarkmode("true");
+      } else {
+        setDarkmode("false");
+      }
+    }
+  }, [darkmode]);
 
   const setDarkmodeState = (value: "true" | "false") => {
     setDarkmode(value);
