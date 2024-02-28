@@ -47,7 +47,7 @@ const AsteroidsBackground = () => {
   // Draw circles
   useEffect(() => {
     const color = darkmode === "true" ? "black" : "white";
-    if (canvasInitialized.current) {
+    if (darkmode && canvasInitialized.current) {
       drawCircles(color);
     }
   }, [darkmode, drawCircles]);
