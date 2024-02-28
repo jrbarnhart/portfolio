@@ -1,5 +1,5 @@
 const CTAButton = () => {
-  return <button>Let&apos;s Chat!</button>;
+  return <button className="row-span-2">Let&apos;s Chat!</button>;
 };
 
 export default CTAButton;
