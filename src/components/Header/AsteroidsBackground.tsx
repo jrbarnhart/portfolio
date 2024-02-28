@@ -30,7 +30,7 @@ const AsteroidsBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute top-0 w-full h-full object-contain"
+      className="absolute top-0 w-full h-full object-contain -z-10 bg-black dark:bg-white"
     />
   );
 };
