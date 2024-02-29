@@ -12,7 +12,6 @@ const AsteroidsBackground = () => {
 
   const drawCircles = useCallback((color: string) => {
     if (canvasCtxRef.current && canvasRef.current) {
-      console.log("Drawing circles...");
       const ctx = canvasCtxRef.current;
 
       // Clear the canvas
@@ -33,7 +32,6 @@ const AsteroidsBackground = () => {
   // Initialize canvas
   useEffect(() => {
     if (canvasRef.current && !canvasInitialized.current) {
-      console.log("Initializing canvas...");
       const canvas = canvasRef.current;
       canvasCtxRef.current = canvas.getContext("2d");
       // Change the width of the canvas’ inner drawing surface so it’s the same aspect ratio
