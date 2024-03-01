@@ -2,7 +2,7 @@ import portraitImage from "../../assets/cartoonMe.jpg";
 
 const Portrait = () => {
   return (
-    <div className="relative group h-fit w-fit">
+    <div className="relative group h-fit w-fit justify-self-end">
       <img
         src={portraitImage}
         alt="A cartoon portrait of Joshua Barnhart"
