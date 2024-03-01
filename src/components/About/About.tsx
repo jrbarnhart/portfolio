@@ -1,4 +1,4 @@
-import portraitImage from "../assets/cartoonMe.jpg";
+import portraitImage from "../../assets/cartoonMe.jpg";
 
 const About = () => {
   return (
