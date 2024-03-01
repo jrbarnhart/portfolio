@@ -6,12 +6,14 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <div className="grid">
+    <div>
       <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main className="grid">
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
     </div>
   );
 };
