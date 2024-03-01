@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Header from "./components/Header/Header";
-import Projects from "./components/Projects/Projects";
-import Skills from "./components/Skills/Skills";
 import DarkmodeContext from "./contexts/DarkmodeContext";
+import MainLayout from "./Layout";
 
 function App() {
   const [darkmode, setDarkmode] = useState(localStorage.getItem("darkmode"));
@@ -28,11 +24,7 @@ function App() {
 
   return (
     <DarkmodeContext.Provider value={{ darkmode, setDarkmodeState }}>
-      <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <MainLayout />
     </DarkmodeContext.Provider>
   );
 }
