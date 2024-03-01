@@ -1,6 +1,6 @@
 const Nav = () => {
   return (
-    <nav className="justify-self-center self-end row-start-3 col-span-2 w-full">
+    <nav className="justify-self-center self-end row-start-3 col-span-full w-full">
       <ul className="flex justify-between">
         <li>
           <p>About</p>
