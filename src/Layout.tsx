@@ -6,7 +6,7 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="grid">
       <Header />
       <About />
       <Skills />
