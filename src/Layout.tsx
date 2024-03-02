@@ -8,7 +8,7 @@ const MainLayout = () => {
   return (
     <div>
       <Header />
-      <main className="grid">
+      <main className="grid gap-y-5">
         <About />
         <Skills />
         <Projects />
