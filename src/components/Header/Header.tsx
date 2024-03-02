@@ -4,7 +4,7 @@ import TitleCard from "./TitleCard";
 
 const Header = () => {
   return (
-    <div className="sticky top-0 w-full h-96 bg-transparent text-neutral-50 dark:text-black grid z-10">
+    <div className="sticky top-0 z-[999] w-full h-96 bg-transparent text-neutral-50 dark:text-black grid">
       <AsteroidsBackground />
       <TitleCard />
       <DarkModeButton />
