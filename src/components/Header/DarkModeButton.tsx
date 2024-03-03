@@ -27,7 +27,7 @@ const DarkModeButton = () => {
   };
 
   return (
-    <button onClick={toggleDarkmode} className="absolute top-0 right-0 p-3">
+    <button onClick={toggleDarkmode} className="absolute top-0 right-0 px-5">
       Toggle Darkmode
     </button>
   );
