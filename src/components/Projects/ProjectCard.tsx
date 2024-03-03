@@ -1,11 +1,4 @@
-interface ProjectInfo {
-  title: string;
-  description: string;
-  skills: string[];
-  url: string;
-  src: string;
-  alt: string;
-}
+import { ProjectCardProps } from "./types";
 
 const ProjectCard = ({
   title,
@@ -14,7 +7,7 @@ const ProjectCard = ({
   url,
   src,
   alt,
-}: ProjectInfo) => {
+}: ProjectCardProps) => {
   return (
     <div>
       <h2>{title}</h2>
