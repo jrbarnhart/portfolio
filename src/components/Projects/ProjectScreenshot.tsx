@@ -13,7 +13,7 @@ const ProjectScreenshot = ({
 }) => {
   const [linksVisible, setLinksVisible] = useState(false);
   const visibleClasses =
-    "not-sr-only absolute top-0 grid grid-flow-col w-full h-full justify-items-center items-center";
+    "not-sr-only absolute top-0 grid grid-flow-col w-full max-w-[600px] h-full justify-items-center items-center";
   const notVisibleClasses = "sr-only";
 
   return (
@@ -27,7 +27,7 @@ const ProjectScreenshot = ({
       onMouseLeave={() => {
         setLinksVisible(false);
       }}
-      className="relative grid row-span-3 col-start-2"
+      className="relative justify-self-center grid row-span-3 md:col-start-2"
     >
       <img className="rounded-xl" src={src} alt={alt} />
       <div className={linksVisible ? visibleClasses : notVisibleClasses}>
