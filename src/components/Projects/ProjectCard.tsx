@@ -1,15 +1,15 @@
 const ProjectCard = ({
-  src,
-  alt,
   title,
   description,
   skills,
+  src,
+  alt,
 }: {
-  src: string;
-  alt: string;
   title: string;
   description: string;
   skills: string[];
+  src: string;
+  alt: string;
 }) => {
   return (
     <div>
