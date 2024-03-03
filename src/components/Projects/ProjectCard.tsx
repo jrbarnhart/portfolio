@@ -12,7 +12,7 @@ const ProjectCard = ({
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
-      <a href={url}>
+      <a href={url} target="_blank" rel="noreferrer">
         <img src={src} alt={alt} />
       </a>
       {skills.map((skill) => {
