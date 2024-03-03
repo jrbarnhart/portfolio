@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 const TitleCard = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-4 w-[768px] justify-self-center px-5">
+    <div className="grid grid-cols-2 grid-rows-4 w-full justify-self-center px-5">
       <p className="col-start-1 col-span-full self-end">Hi! My name is</p>
       <h1 className="col-start-1 row-start-2 col-span-full text-5xl self-center">
         Joshua Barnhart
