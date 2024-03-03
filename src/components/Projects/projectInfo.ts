@@ -9,7 +9,8 @@ const projectInfo: ProjectCardProps[] = [
     description:
       "Test your memory by selecting unique cards for as long as possible.",
     skills: ["React", "API Fetching", "Javascript"],
-    url: "https://memory-cards-xi.vercel.app/",
+    demoUrl: "https://memory-cards-xi.vercel.app/",
+    codeUrl: "https://github.com/xincryptedx/memory-cards",
     src: memoryCardsScreen,
     alt: "Screenshot of Memory Cards application",
   },
