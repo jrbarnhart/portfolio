@@ -2,12 +2,14 @@ const ProjectCard = ({
   title,
   description,
   skills,
+  url,
   src,
   alt,
 }: {
   title: string;
   description: string;
   skills: string[];
+  url: string;
   src: string;
   alt: string;
 }) => {
@@ -15,7 +17,9 @@ const ProjectCard = ({
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
-      <img src={src} alt={alt} />
+      <a href={url}>
+        <img src={src} alt={alt} />
+      </a>
       {skills.map((skill) => {
         return <p key={skill}>{skill}</p>;
       })}
