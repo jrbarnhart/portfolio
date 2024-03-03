@@ -1,6 +1,6 @@
 const Skills = () => {
   return (
-    <div className="justify-self-center w-[768px] grid grid-flow-col p-5 bg-neutral-400 dark:bg-neutral-800 rounded-3xl">
+    <div className="justify-self-center w-full grid grid-flow-col p-5 bg-neutral-400 dark:bg-neutral-800 rounded-3xl">
       <div>
         <h2 className="text-2xl border-b-2 border-black dark:border-neutral-50 w-fit">
           Languages

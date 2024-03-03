@@ -6,9 +6,9 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="grid">
       <Header />
-      <main className="grid gap-y-5">
+      <main className="justify-self-center grid gap-y-5 w-[768px]">
         <About />
         <Skills />
         <Projects />
