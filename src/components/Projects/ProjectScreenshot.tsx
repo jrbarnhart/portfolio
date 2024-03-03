@@ -27,7 +27,7 @@ const ProjectScreenshot = ({
       onMouseLeave={() => {
         setLinksVisible(false);
       }}
-      className="relative justify-self-center grid row-span-3 md:col-start-2"
+      className="relative justify-self-center grid row-span-2 md:col-start-2"
     >
       <img className="rounded-xl" src={src} alt={alt} />
       <div className={linksVisible ? visibleClasses : notVisibleClasses}>
