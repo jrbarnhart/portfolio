@@ -8,7 +8,7 @@ const MainLayout = () => {
   return (
     <div className="grid">
       <Header />
-      <main className="justify-self-center grid gap-y-5 w-[768px]">
+      <main className="justify-self-center grid gap-y-5  w-screen md:w-[768px]">
         <About />
         <Skills />
         <Projects />
