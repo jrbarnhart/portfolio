@@ -1,11 +1,13 @@
+import ProjectCard from "./ProjectCard";
+import projectInfo from "./projectInfo";
+
 const Projects = () => {
   return (
-    <>
-      <p>This is a project card.</p>
-      <p>This is a project card.</p>
-      <p>This is a project card.</p>
-      <p>This is a project card.</p>
-    </>
+    <div>
+      {projectInfo.map((info) => {
+        return <ProjectCard key={info.title} {...info} />;
+      })}
+    </div>
   );
 };
 
