@@ -1,3 +1,12 @@
+interface ProjectInfo {
+  title: string;
+  description: string;
+  skills: string[];
+  url: string;
+  src: string;
+  alt: string;
+}
+
 const ProjectCard = ({
   title,
   description,
@@ -5,14 +14,7 @@ const ProjectCard = ({
   url,
   src,
   alt,
-}: {
-  title: string;
-  description: string;
-  skills: string[];
-  url: string;
-  src: string;
-  alt: string;
-}) => {
+}: ProjectInfo) => {
   return (
     <div>
       <h2>{title}</h2>
