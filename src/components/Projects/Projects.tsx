@@ -3,7 +3,7 @@ import projectInfo from "./projectInfo";
 
 const Projects = () => {
   return (
-    <div>
+    <div className="justify-self-center grid w-[768]">
       {projectInfo.map((info) => {
         return <ProjectCard key={info.title} {...info} />;
       })}
