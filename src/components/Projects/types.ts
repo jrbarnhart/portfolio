@@ -2,7 +2,8 @@ export interface ProjectCardProps {
   title: string;
   description: string;
   skills: string[];
-  url: string;
+  demoUrl: string;
+  codeUrl: string;
   src: string;
   alt: string;
 }
