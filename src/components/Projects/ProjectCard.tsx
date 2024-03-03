@@ -4,7 +4,8 @@ const ProjectCard = ({
   title,
   description,
   skills,
-  url,
+  demoUrl,
+  codeUrl,
   src,
   alt,
 }: ProjectCardProps) => {
@@ -12,8 +13,12 @@ const ProjectCard = ({
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
-      <a href={url} target="_blank" rel="noreferrer">
-        <img src={src} alt={alt} />
+      <img src={src} alt={alt} />
+      <a href={demoUrl} target="_blank" rel="noreferrer">
+        Demo
+      </a>
+      <a href={codeUrl} target="_blank" rel="noreferrer">
+        Code
       </a>
       {skills.map((skill) => {
         return <p key={skill}>{skill}</p>;
