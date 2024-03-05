@@ -4,11 +4,14 @@
 import { useContext } from "react";
 import DarkmodeContext from "../../contexts/DarkmodeContext";
 
+import lightIcon from "../../assets/light_mode.svg";
+import darkIcon from "../../assets/dark_mode.svg";
+
 // Note that the initial theme is set by a small script in the index.html file. This
 // prevents flickering that could occurr if this step were done in a useEffect() here.
 
 const DarkModeButton = () => {
-  const { setDarkmodeState } = useContext(DarkmodeContext);
+  const { darkmode, setDarkmodeState } = useContext(DarkmodeContext);
 
   const toggleDarkmode = () => {
     if (document.documentElement.classList.contains("dark")) {
@@ -27,8 +30,12 @@ const DarkModeButton = () => {
   };
 
   return (
-    <button onClick={toggleDarkmode} className="absolute top-0 right-0 px-5">
-      Toggle Darkmode
+    <button onClick={toggleDarkmode}>
+      <img
+        src={darkmode === "true" ? darkIcon : lightIcon}
+        alt="icon for dark / light mode"
+        className="h-full"
+      />
     </button>
   );
 };
