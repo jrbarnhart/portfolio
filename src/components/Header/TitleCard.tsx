@@ -1,5 +1,4 @@
 import CTAButton from "./CTAButton";
-import Nav from "./Nav";
 
 const TitleCard = () => {
   return (
@@ -9,7 +8,6 @@ const TitleCard = () => {
         Joshua Barnhart
       </h1>
       <CTAButton />
-      <Nav />
     </div>
   );
 };
