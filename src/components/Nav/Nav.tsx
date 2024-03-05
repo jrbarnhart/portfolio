@@ -1,7 +1,7 @@
 const Nav = () => {
   return (
-    <nav className="justify-self-center self-end row-start-4 col-span-full w-full">
-      <ul className="flex justify-between">
+    <nav className="grid w-full ">
+      <ul className="justify-self-center flex justify-between w-full max-w-[768px]">
         <li>
           <p>About</p>
         </li>
