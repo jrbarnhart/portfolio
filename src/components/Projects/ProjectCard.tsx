@@ -11,7 +11,7 @@ const ProjectCard = ({
   alt,
 }: ProjectCardProps) => {
   return (
-    <div className="grid md:grid-cols-2 gap-x-2">
+    <div id="projects" className="grid md:grid-cols-2 gap-x-2">
       <h2 className="text-center md:text-left text-2xl">{title}:</h2>
       <ProjectScreenshot
         src={src}

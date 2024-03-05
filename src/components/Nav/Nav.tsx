@@ -3,13 +3,13 @@ const Nav = () => {
     <nav className="grid w-full ">
       <ul className="justify-self-center flex justify-between w-full max-w-[768px]">
         <li>
-          <p>About</p>
+          <a href="#about">About</a>
         </li>
         <li>
-          <p>Projects</p>
+          <a href="#projects">Projects</a>
         </li>
         <li>
-          <p>Contact</p>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
