@@ -6,4 +6,7 @@ export default {
   },
   plugins: [],
   darkMode: "selector",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
