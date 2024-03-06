@@ -4,7 +4,7 @@ This is my personal portfolio project built using Vite, React, and Tailwind CSS.
 
 ## Description
 
-This project serves as a showcase of my skills, experiences, and projects. It's standout feature will be an interactive banner that functions as an asteroids-type game.
+This project serves as a showcase of my skills, experiences, and projects. It's standout feature will be an interactive banner that features particles on an HTML canvas element.
 
 ## Technologies Used
 
