@@ -3,7 +3,7 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import DarkmodeContext from "../../contexts/DarkmodeContext";
 
-const AsteroidsBackground = () => {
+const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
   const canvasInitialized = useRef<boolean>(false);
@@ -58,4 +58,4 @@ const AsteroidsBackground = () => {
   );
 };
 
-export default AsteroidsBackground;
+export default AnimatedBackground;
