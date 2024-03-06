@@ -24,7 +24,7 @@ const AnimatedBackground = () => {
       console.log("Canvas initialized.");
     }
 
-    // Start animation if canvas exists and is initialized
+    // Start animation if canvas exists and is initialized if animation has not already started
     if (
       canvasRef.current &&
       canvasInitialized.current &&
