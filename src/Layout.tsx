@@ -10,7 +10,7 @@ const MainLayout = () => {
     <div className="grid">
       <Nav />
       <Header />
-      <main className="justify-self-center grid gap-y-5 w-full md:w-[768px]">
+      <main className="justify-self-center grid gap-y-5 w-full max-w-[768px]">
         <About />
         <Skills />
         <Projects />
