@@ -15,13 +15,13 @@ const NavLink = ({
 
   const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
-    anchorTarget?.scrollIntoView({ behavior: "smooth", block: "start" });
+    anchorTarget?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
     <div className="relative group">
       <a
-        href={`#${id}`}
+        href={id}
         onClick={(e) => {
           handleClick(e);
         }}
