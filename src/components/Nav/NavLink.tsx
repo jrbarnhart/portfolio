@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 const NavLink = ({
   children,
   id,
+  offset,
 }: {
   children: React.ReactNode;
   id: string;
+  offset: number;
 }) => {
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
@@ -13,9 +15,21 @@ const NavLink = ({
     setAnchorTarget(document.getElementById(id));
   }, [id]);
 
+  const scrollIntoViewWithOffset = (offset: number) => {
+    if (anchorTarget) {
+      window.scrollTo({
+        behavior: "smooth",
+        top:
+          anchorTarget.getBoundingClientRect().top -
+          document.body.getBoundingClientRect().top -
+          offset,
+      });
+    }
+  };
+
   const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
-    anchorTarget?.scrollIntoView({ behavior: "smooth", block: "center" });
+    scrollIntoViewWithOffset(offset);
   };
 
   return (
