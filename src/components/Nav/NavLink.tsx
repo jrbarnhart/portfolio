@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 
-const NavLink = ({ id, linkText }: { id: string; linkText: string }) => {
+const NavLink = ({
+  children,
+  id,
+}: {
+  children: React.ReactNode;
+  id: string;
+}) => {
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -19,7 +25,7 @@ const NavLink = ({ id, linkText }: { id: string; linkText: string }) => {
         handleClick(e);
       }}
     >
-      {linkText}
+      {children}
     </a>
   );
 };
