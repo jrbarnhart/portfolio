@@ -1,10 +1,10 @@
-import AsteroidsBackground from "./AsteroidsBackground";
+import AnimatedBackground from "./AnimatedBackground";
 import TitleCard from "./TitleCard";
 
 const Header = () => {
   return (
     <div className="relative w-full md:h-96 bg-transparent text-neutral-50 dark:text-black grid">
-      <AsteroidsBackground />
+      <AnimatedBackground />
       <TitleCard />
     </div>
   );
