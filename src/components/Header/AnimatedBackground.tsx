@@ -1,16 +1,42 @@
 // This component is an html canvas that displays the asteroids banner game
 
-import { useCallback, useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import DarkmodeContext from "../../contexts/DarkmodeContext";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
   const canvasInitialized = useRef<boolean>(false);
+  const animationStarted = useRef<boolean>(false);
 
   const { darkmode } = useContext(DarkmodeContext);
 
-  const drawCircles = useCallback((color: string) => {
+  useEffect(() => {
+    // Initialize the canvas if it exists and is not yet initialized
+    if (canvasRef.current && !canvasInitialized.current) {
+      const canvas = canvasRef.current;
+      canvasCtxRef.current = canvas.getContext("2d");
+      // Change the width of the canvas’ inner drawing surface so it’s the same aspect ratio
+      // as the canvas element on the page
+      canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
+
+      canvasInitialized.current = true;
+      console.log("Canvas initialized.");
+    }
+
+    // Start animation if canvas exists and is initialized
+    if (
+      canvasRef.current &&
+      canvasInitialized.current &&
+      !animationStarted.current
+    ) {
+      // Start the animation
+      animationStarted.current = true;
+      console.log("Animation started.");
+    }
+  }, []);
+
+  /*  const drawCircles = useCallback((color: string) => {
     if (canvasCtxRef.current && canvasRef.current) {
       const ctx = canvasCtxRef.current;
 
@@ -48,7 +74,7 @@ const AnimatedBackground = () => {
     if (darkmode && canvasInitialized.current) {
       drawCircles(color);
     }
-  }, [darkmode, drawCircles]);
+  }, [darkmode, drawCircles]); */
 
   return (
     <canvas
