@@ -25,6 +25,7 @@ const NavLink = ({
         onClick={(e) => {
           handleClick(e);
         }}
+        className="text-xl"
       >
         {children}
       </a>
