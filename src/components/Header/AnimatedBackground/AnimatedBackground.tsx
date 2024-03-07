@@ -3,6 +3,7 @@
 import { useContext, useEffect, useRef } from "react";
 import DarkmodeContext from "../../../contexts/DarkmodeContext";
 import createParticle, { ParticleInterface } from "./createParticle";
+import animate from "./animate";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -29,17 +30,22 @@ const AnimatedBackground = () => {
     }
 
     // Initialize particles if canvas is initialized and particles not yet initialized
-    if (canvasInitialized.current && !particlesInitialized.current) {
+    if (
+      canvasRef.current &&
+      canvasInitialized.current &&
+      !particlesInitialized.current
+    ) {
       // Initialize particles
-      const newParticle = createParticle({
-        x: 50,
-        y: 100,
-        v: { x: 5, y: 5 },
-        mass: 10,
-      });
-      const anotherParticle = { ...newParticle, x: 100, y: 50 };
+      for (let i = 0; i < 1000; i++) {
+        const newParticle = createParticle({
+          x: canvasRef.current.width * Math.random(),
+          y: canvasRef.current.height * Math.random(),
+          v: { x: 2 * Math.random(), y: 2 * Math.random() },
+          mass: 10,
+        });
 
-      particles.push(newParticle, anotherParticle);
+        particles.push(newParticle);
+      }
 
       particlesInitialized.current = true;
       console.log("Particles initialized.");
@@ -48,15 +54,23 @@ const AnimatedBackground = () => {
 
     // Start animation if canvas and particles are initialized and animation has not already started
     if (
+      canvasRef.current &&
+      canvasCtxRef.current &&
       canvasInitialized.current &&
       particlesInitialized.current &&
       !animationStarted.current
     ) {
       // Start the animation
+      animate({
+        particles,
+        canvasX: canvasRef.current.width,
+        canvasY: canvasRef.current.height,
+        ctx: canvasCtxRef.current,
+      });
       animationStarted.current = true;
       console.log("Animation started.");
     }
-  }, []);
+  }, [particles]);
 
   /*  const drawCircles = useCallback((color: string) => {
     if (canvasCtxRef.current && canvasRef.current) {
