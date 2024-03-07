@@ -1,7 +1,7 @@
 // This component is an html canvas that displays the asteroids banner game
 
 import { useContext, useEffect, useRef } from "react";
-import DarkmodeContext from "../../contexts/DarkmodeContext";
+import DarkmodeContext from "../../../contexts/DarkmodeContext";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

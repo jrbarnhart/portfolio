@@ -1,4 +1,4 @@
-import AnimatedBackground from "./AnimatedBackground";
+import AnimatedBackground from "./AnimatedBackground/AnimatedBackground";
 import TitleCard from "./TitleCard";
 
 const Header = () => {
