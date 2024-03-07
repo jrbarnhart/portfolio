@@ -32,7 +32,7 @@ const animate = ({
   particles.forEach((particle) => {
     ctx.beginPath(); // Begin path for drawing the particle
     ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
-    ctx.fillStyle = "currentColor"; // Set fill style for the particle
+    ctx.fillStyle = particle.color; // Set fill style for the particle
     ctx.fill(); // Fill the particle shape
   });
 
