@@ -2,14 +2,18 @@
 
 import { useContext, useEffect, useRef } from "react";
 import DarkmodeContext from "../../../contexts/DarkmodeContext";
+import createParticle, { ParticleInterface } from "./createParticle";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
   const canvasInitialized = useRef<boolean>(false);
+  const particlesInitialized = useRef<boolean>(false);
   const animationStarted = useRef<boolean>(false);
 
   const { darkmode } = useContext(DarkmodeContext);
+
+  const particles: ParticleInterface[] = [];
 
   useEffect(() => {
     // Initialize the canvas if it exists and is not yet initialized
@@ -24,10 +28,28 @@ const AnimatedBackground = () => {
       console.log("Canvas initialized.");
     }
 
-    // Start animation if canvas exists and is initialized if animation has not already started
+    // Initialize particles if canvas is initialized and particles not yet initialized
+    if (canvasInitialized.current && !particlesInitialized.current) {
+      // Initialize particles
+      const newParticle = createParticle({
+        x: 50,
+        y: 100,
+        v: { x: 5, y: 5 },
+        mass: 10,
+      });
+      const anotherParticle = { ...newParticle, x: 100, y: 50 };
+
+      particles.push(newParticle, anotherParticle);
+
+      particlesInitialized.current = true;
+      console.log("Particles initialized.");
+      console.log(particles);
+    }
+
+    // Start animation if canvas and particles are initialized and animation has not already started
     if (
-      canvasRef.current &&
       canvasInitialized.current &&
+      particlesInitialized.current &&
       !animationStarted.current
     ) {
       // Start the animation
