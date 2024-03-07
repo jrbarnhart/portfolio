@@ -1,3 +1,42 @@
+interface ParticleInterface {
+  x: number;
+  y: number;
+  v: { x: number; y: number };
+  mass: number;
+  move: (force: { x: number; y: number }) => void;
+}
+
+const createParticle = ({
+  x,
+  y,
+  v,
+  mass,
+}: {
+  x: number;
+  y: number;
+  v: { x: number; y: number };
+  mass: number;
+}) => {
+  const particle: ParticleInterface = {
+    x,
+    y,
+    v,
+    mass,
+    move: (force: { x: number; y: number }) => {
+      // Update velocity based on force
+      particle.v.x += force.x / mass;
+      particle.v.y += force.y / mass;
+      // Update position based on velocity
+      particle.x += particle.v.x;
+      particle.y += particle.v.y;
+    },
+  };
+
+  return particle;
+};
+
+export default createParticle;
+
 // Example class for particle. Includes properties needed for simulating 2d motion.
 
 /*
