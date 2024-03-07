@@ -1,4 +1,4 @@
-interface ParticleInterface {
+export interface ParticleInterface {
   x: number;
   y: number;
   v: { x: number; y: number };
