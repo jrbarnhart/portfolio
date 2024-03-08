@@ -3,12 +3,14 @@ import { ParticleInterface } from "./createParticle";
 const animate = ({
   particles,
   setParticles,
+  darkmode,
   canvasX,
   canvasY,
   ctx,
 }: {
   particles: ParticleInterface[];
   setParticles: (value: ParticleInterface[]) => void;
+  darkmode: string | null;
   canvasX: number;
   canvasY: number;
   ctx: CanvasRenderingContext2D;
@@ -18,6 +20,8 @@ const animate = ({
 
   // For each particle in the new array
   newParticlesState.forEach((particle) => {
+    // Set color based on darkmode
+    particle.color = darkmode === "true" ? "purple" : "yellow";
     // Calc force v2 STATIC FOR NOW
     // Move particle using force
     particle.move({ x: 0.005, y: 0.005 });
@@ -41,11 +45,6 @@ const animate = ({
     ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
     ctx.fillStyle = particle.color; // Set fill style for the particle
     ctx.fill(); // Fill the particle shape
-  });
-
-  // Recursively call fn
-  requestAnimationFrame(() => {
-    animate({ particles, setParticles, canvasX, canvasY, ctx });
   });
 };
 
