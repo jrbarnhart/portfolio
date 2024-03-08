@@ -42,7 +42,8 @@ const AnimatedBackground = () => {
         const newParticle = createParticle({
           x: canvasRef.current.width * Math.random(),
           y: canvasRef.current.height * Math.random(),
-          v: { x: 2 * Math.random(), y: 2 * Math.random() },
+          vx: 2 * Math.random(),
+          vy: 2 * Math.random(),
           mass: 10,
           color: darkmode === "true" ? "black" : "white",
         });
