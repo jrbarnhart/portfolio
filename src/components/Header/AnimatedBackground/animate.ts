@@ -2,18 +2,23 @@ import { ParticleInterface } from "./createParticle";
 
 const animate = ({
   particles,
+  setParticles,
   canvasX,
   canvasY,
   ctx,
 }: {
   particles: ParticleInterface[];
+  setParticles: (value: ParticleInterface[]) => void;
   canvasX: number;
   canvasY: number;
   ctx: CanvasRenderingContext2D;
 }) => {
-  // For each particle
-  particles.forEach((particle) => {
-    // Calc force v2
+  // Create the next state for particles using new array
+  const newParticlesState = [...particles];
+
+  // For each particle in the new array
+  newParticlesState.forEach((particle) => {
+    // Calc force v2 STATIC FOR NOW
     // Move particle using force
     particle.move({ x: 0.005, y: 0.005 });
     // Reverse velocity on boundary collision
@@ -24,6 +29,8 @@ const animate = ({
       particle.v.y *= -1;
     }
   });
+
+  setParticles(newParticlesState);
 
   // Erase canvas
   ctx.clearRect(0, 0, canvasX, canvasY);
@@ -38,7 +45,7 @@ const animate = ({
 
   // Recursively call fn
   requestAnimationFrame(() => {
-    animate({ particles, canvasX, canvasY, ctx });
+    animate({ particles, setParticles, canvasX, canvasY, ctx });
   });
 };
 
