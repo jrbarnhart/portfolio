@@ -8,10 +8,11 @@ import animate from "./animate";
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const canvasInitialized = useRef<boolean>(false);
-  const particlesInitialized = useRef<boolean>(false);
-  const animationStarted = useRef<boolean>(false);
   const animationFrameRef = useRef<number | null>(null);
+  const [canvasInitialized, setCanvasInitialized] = useState<boolean>(false);
+  const [particlesInitialized, setParticlesInitialized] =
+    useState<boolean>(false);
+  const [animationStarted, setAnimationStarted] = useState<boolean>(false);
 
   const { darkmode } = useContext(DarkmodeContext);
 
@@ -19,25 +20,21 @@ const AnimatedBackground = () => {
 
   // Initialize the canvas if it exists and is not yet initialized
   useEffect(() => {
-    if (canvasRef.current && !canvasInitialized.current) {
+    if (canvasRef.current && !canvasInitialized) {
       const canvas = canvasRef.current;
       canvasCtxRef.current = canvas.getContext("2d");
       // Change the width of the canvas’ inner drawing surface so it’s the same aspect ratio
       // as the canvas element on the page
       canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
 
-      canvasInitialized.current = true;
+      setCanvasInitialized(true);
       console.log("Canvas initialized.");
     }
-  }, []);
+  }, [canvasInitialized]);
 
   // Initialize particles if canvas is initialized and particles not yet initialized
   useEffect(() => {
-    if (
-      canvasRef.current &&
-      canvasInitialized.current &&
-      !particlesInitialized.current
-    ) {
+    if (canvasRef.current && canvasInitialized && !particlesInitialized) {
       // Initialize particles
       const initialParticles = [];
       for (let i = 0; i < 5; i++) {
@@ -54,14 +51,14 @@ const AnimatedBackground = () => {
 
       setParticles(initialParticles);
 
-      particlesInitialized.current = true;
+      setParticlesInitialized(true);
       console.log("Particles initialized.");
     }
-  }, [darkmode]);
+  }, [canvasInitialized, darkmode, particlesInitialized]);
 
   // Start animation if canvas and particles are initialized and animation has not already started
   useEffect(() => {
-    // Start the animation
+    // Define the animation loop
     const animationLoop = () => {
       if (!canvasRef.current || !canvasCtxRef.current) return;
 
@@ -80,23 +77,28 @@ const AnimatedBackground = () => {
     if (
       canvasRef.current &&
       canvasCtxRef.current &&
-      canvasInitialized.current &&
-      particlesInitialized.current &&
+      canvasInitialized &&
+      particlesInitialized &&
       particles.length > 0 &&
-      !animationStarted.current
+      !animationStarted
     ) {
       animationLoop();
-      animationStarted.current = true;
+      setAnimationStarted(true);
       console.log("Animation started.");
     }
 
-    /*     return () => {
+    return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
-        animationFrameRef.current = null;
       }
-    }; */
-  }, [particles, darkmode]);
+    };
+  }, [
+    particles,
+    darkmode,
+    canvasInitialized,
+    particlesInitialized,
+    animationStarted,
+  ]);
 
   return (
     <canvas
