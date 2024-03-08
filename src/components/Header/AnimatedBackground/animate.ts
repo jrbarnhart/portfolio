@@ -27,10 +27,10 @@ const animate = ({
     particle.move({ x: 0.005, y: 0.005 });
     // Reverse velocity on boundary collision
     if (particle.x < 0 || particle.x > canvasX) {
-      particle.v.x *= -1;
+      particle.vx *= -1;
     }
     if (particle.y < 0 || particle.y > canvasY) {
-      particle.v.y *= -1;
+      particle.vy *= -1;
     }
   });
 
