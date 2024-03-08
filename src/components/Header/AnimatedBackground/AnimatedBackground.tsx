@@ -1,6 +1,6 @@
 // This component is an html canvas that displays the asteroids banner game
 
-import { useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import DarkmodeContext from "../../../contexts/DarkmodeContext";
 import createParticle, { ParticleInterface } from "./createParticle";
 import animate from "./animate";
@@ -15,6 +15,7 @@ const AnimatedBackground = () => {
   const [animationStarted, setAnimationStarted] = useState<boolean>(false);
 
   const { darkmode } = useContext(DarkmodeContext);
+  const darkmodeRef = useRef(darkmode);
 
   const [particles, setParticles] = useState<ParticleInterface[]>([]);
 
@@ -56,10 +57,9 @@ const AnimatedBackground = () => {
     }
   }, [canvasInitialized, darkmode, particlesInitialized]);
 
-  // Start animation if canvas and particles are initialized and animation has not already started
-  useEffect(() => {
-    // Define the animation loop
-    const animationLoop = () => {
+  // Define animation loop
+  const animationLoop = useCallback(
+    (darkmode: string | null, particles: ParticleInterface[]) => {
       if (!canvasRef.current || !canvasCtxRef.current) return;
 
       animate({
@@ -71,9 +71,16 @@ const AnimatedBackground = () => {
         ctx: canvasCtxRef.current,
       });
 
-      animationFrameRef.current = requestAnimationFrame(animationLoop);
-    };
+      animationFrameRef.current = requestAnimationFrame(() => {
+        animationLoop(darkmode, particles);
+      });
+    },
+    []
+  );
 
+  // Start animation
+  useEffect(() => {
+    // If refs, canvas and particles are initialized and animation has not already started
     if (
       canvasRef.current &&
       canvasCtxRef.current &&
@@ -82,7 +89,7 @@ const AnimatedBackground = () => {
       particles.length > 0 &&
       !animationStarted
     ) {
-      animationLoop();
+      animationLoop(darkmode, particles);
       setAnimationStarted(true);
       console.log("Animation started.");
     }
@@ -92,7 +99,22 @@ const AnimatedBackground = () => {
     canvasInitialized,
     particlesInitialized,
     animationStarted,
+    animationLoop,
   ]);
+
+  // If darkmode is toggled then stop the animation and restart with new darkmode arg
+  useEffect(() => {
+    if (
+      animationStarted &&
+      animationFrameRef.current &&
+      darkmodeRef.current !== darkmode
+    ) {
+      console.log("Change detected. Restarting animation.");
+      cancelAnimationFrame(animationFrameRef.current);
+      animationLoop(darkmode, particles);
+      darkmodeRef.current = darkmode;
+    }
+  }, [animationLoop, animationStarted, darkmode, particles]);
 
   return (
     <canvas
