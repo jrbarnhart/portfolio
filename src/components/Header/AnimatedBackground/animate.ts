@@ -34,18 +34,20 @@ const animate = ({
     }
   });
 
-  setParticles(newParticlesState);
-
   // Erase canvas
   ctx.clearRect(0, 0, canvasX, canvasY);
 
-  // Draw particles
-  particles.forEach((particle) => {
+  // Draw particles using the new state.
+  // !!!!Sync/jitter issues from async state updates? Seems fine, but monitor this.!!!!
+  newParticlesState.forEach((particle) => {
     ctx.beginPath(); // Begin path for drawing the particle
     ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
     ctx.fillStyle = particle.color; // Set fill style for the particle
     ctx.fill(); // Fill the particle shape
   });
+
+  // Set the new state
+  setParticles(newParticlesState);
 };
 
 export default animate;
