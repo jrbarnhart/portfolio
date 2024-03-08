@@ -86,12 +86,6 @@ const AnimatedBackground = () => {
       setAnimationStarted(true);
       console.log("Animation started.");
     }
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
   }, [
     particles,
     darkmode,
