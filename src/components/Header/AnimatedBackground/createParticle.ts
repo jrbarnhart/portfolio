@@ -1,7 +1,8 @@
 export interface ParticleInterface {
   x: number;
   y: number;
-  v: { x: number; y: number };
+  vx: number;
+  vy: number;
   mass: number;
   color: string;
   move: (force: { x: number; y: number }) => void;
@@ -10,29 +11,32 @@ export interface ParticleInterface {
 const createParticle = ({
   x,
   y,
-  v,
+  vx,
+  vy,
   mass,
   color,
 }: {
   x: number;
   y: number;
-  v: { x: number; y: number };
+  vx: number;
+  vy: number;
   mass: number;
   color: string;
 }) => {
   const particle: ParticleInterface = {
     x,
     y,
-    v,
+    vx,
+    vy,
     mass,
     color,
     move: (force: { x: number; y: number }) => {
       // Update velocity based on force
-      particle.v.x += force.x / mass;
-      particle.v.y += force.y / mass;
+      particle.vx += force.x / mass;
+      particle.vy += force.y / mass;
       // Update position based on velocity
-      particle.x += particle.v.x;
-      particle.y += particle.v.y;
+      particle.x += particle.vx;
+      particle.y += particle.vy;
     },
   };
 
