@@ -11,6 +11,7 @@ const AnimatedBackground = () => {
   const canvasInitialized = useRef<boolean>(false);
   const particlesInitialized = useRef<boolean>(false);
   const animationStarted = useRef<boolean>(false);
+  const animationFrameRef = useRef<number | null>(null);
 
   const { darkmode } = useContext(DarkmodeContext);
 
@@ -39,7 +40,7 @@ const AnimatedBackground = () => {
     ) {
       // Initialize particles
       const initialParticles = [];
-      for (let i = 0; i < 500; i++) {
+      for (let i = 0; i < 5; i++) {
         const newParticle = createParticle({
           x: canvasRef.current.width * Math.random(),
           y: canvasRef.current.height * Math.random(),
@@ -60,6 +61,22 @@ const AnimatedBackground = () => {
 
   // Start animation if canvas and particles are initialized and animation has not already started
   useEffect(() => {
+    // Start the animation
+    const animationLoop = () => {
+      if (!canvasRef.current || !canvasCtxRef.current) return;
+
+      animate({
+        particles,
+        setParticles,
+        darkmode,
+        canvasX: canvasRef.current.width,
+        canvasY: canvasRef.current.height,
+        ctx: canvasCtxRef.current,
+      });
+
+      animationFrameRef.current = requestAnimationFrame(animationLoop);
+    };
+
     if (
       canvasRef.current &&
       canvasCtxRef.current &&
@@ -68,18 +85,18 @@ const AnimatedBackground = () => {
       particles.length > 0 &&
       !animationStarted.current
     ) {
-      // Start the animation
-      animate({
-        particles,
-        setParticles,
-        canvasX: canvasRef.current.width,
-        canvasY: canvasRef.current.height,
-        ctx: canvasCtxRef.current,
-      });
+      animationLoop();
       animationStarted.current = true;
       console.log("Animation started.");
     }
-  }, [particles]);
+
+    /*     return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    }; */
+  }, [particles, darkmode]);
 
   return (
     <canvas
