@@ -8,16 +8,14 @@ import animate from "./animate";
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const animationFrameRef = useRef<number | null>(null);
   const [canvasInitialized, setCanvasInitialized] = useState<boolean>(false);
+  const particlesRef = useRef<ParticleInterface[]>([]);
   const [particlesInitialized, setParticlesInitialized] =
     useState<boolean>(false);
+  const animationFrameRef = useRef<number | null>(null);
   const [animationStarted, setAnimationStarted] = useState<boolean>(false);
-
   const { darkmode } = useContext(DarkmodeContext);
   const darkmodeRef = useRef(darkmode);
-
-  const particlesRef = useRef<ParticleInterface[]>([]);
 
   // Initialize the canvas if it exists and is not yet initialized
   useEffect(() => {
