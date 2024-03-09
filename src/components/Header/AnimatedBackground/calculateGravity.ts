@@ -27,7 +27,7 @@ const calculateGravity = (
 
   particles.forEach((particle) => {
     if (!(targetParticle.x === particle.x && targetParticle.y === particle.y)) {
-      const attractionForce = calculateAttraction(targetParticle, particle, 2);
+      const attractionForce = calculateAttraction(targetParticle, particle, 3);
       netForce.x += attractionForce.x;
       netForce.y += attractionForce.y;
     }
