@@ -14,15 +14,15 @@ const animate = ({
   canvasY: number;
   ctx: CanvasRenderingContext2D;
 }) => {
-  const maxVelocity = 1.25;
+  const maxVelocity = 0.05;
 
   // For each particle
   particles.forEach((particle) => {
     // Set color based on darkmode
     particle.color = darkmode === "true" ? "purple" : "yellow";
     // Add drag to slow particles over time
-    particle.vx *= 0.995;
-    particle.vy *= 0.995;
+    particle.vx *= 0.95;
+    particle.vy *= 0.95;
     // Calc gravitational force
     const gravity = calculateGravity(particle, particles);
     // Move particle using force, clamping to min/max values
