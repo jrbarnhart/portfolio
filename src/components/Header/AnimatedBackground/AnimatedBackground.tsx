@@ -17,7 +17,7 @@ const AnimatedBackground = () => {
   const { darkmode } = useContext(DarkmodeContext);
   const darkmodeRef = useRef(darkmode);
 
-  const [particles, setParticles] = useState<ParticleInterface[]>([]);
+  const particlesRef = useRef<ParticleInterface[]>([]);
 
   // Initialize the canvas if it exists and is not yet initialized
   useEffect(() => {
@@ -51,7 +51,7 @@ const AnimatedBackground = () => {
         initialParticles.push(newParticle);
       }
 
-      setParticles(initialParticles);
+      particlesRef.current = initialParticles;
 
       setParticlesInitialized(true);
       console.log("Particles initialized.");
@@ -65,7 +65,6 @@ const AnimatedBackground = () => {
 
       animate({
         particles,
-        setParticles,
         darkmode,
         canvasX: canvasRef.current.width,
         canvasY: canvasRef.current.height,
@@ -87,15 +86,14 @@ const AnimatedBackground = () => {
       canvasCtxRef.current &&
       canvasInitialized &&
       particlesInitialized &&
-      particles.length > 0 &&
+      particlesRef.current.length > 0 &&
       !animationStarted
     ) {
-      animationLoop(darkmode, particles);
+      animationLoop(darkmode, particlesRef.current);
       setAnimationStarted(true);
       console.log("Animation started.");
     }
   }, [
-    particles,
     darkmode,
     canvasInitialized,
     particlesInitialized,
@@ -112,10 +110,10 @@ const AnimatedBackground = () => {
     ) {
       console.log("Change detected. Restarting animation.");
       cancelAnimationFrame(animationFrameRef.current);
-      animationLoop(darkmode, particles);
+      animationLoop(darkmode, particlesRef.current);
       darkmodeRef.current = darkmode;
     }
-  }, [animationLoop, animationStarted, darkmode, particles]);
+  }, [animationLoop, animationStarted, darkmode]);
 
   return (
     <canvas
