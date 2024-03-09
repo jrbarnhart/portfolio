@@ -14,7 +14,7 @@ const animate = ({
   canvasY: number;
   ctx: CanvasRenderingContext2D;
 }) => {
-  const maxVelocity = 0.05;
+  const maxVelocity = 0.08;
 
   // For each particle
   particles.forEach((particle) => {
