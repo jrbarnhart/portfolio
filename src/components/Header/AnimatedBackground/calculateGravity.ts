@@ -10,8 +10,8 @@ const calculateAttraction = (
   const distSq = dx * dx + dy * dy;
   const dist = Math.sqrt(distSq);
   const force = (G * p1.mass * p2.mass) / distSq;
-  const fx = force * (dx / dist);
-  const fy = force * (dy / dist);
+  const fx = -(force * (dx / dist));
+  const fy = -(force * (dy / dist));
   return { x: fx, y: fy };
 };
 
@@ -23,11 +23,7 @@ const calculateGravity = (
 
   particles.forEach((particle) => {
     if (!(targetParticle.x === particle.x && targetParticle.y === particle.y)) {
-      const attractionForce = calculateAttraction(
-        targetParticle,
-        particle,
-        0.1
-      );
+      const attractionForce = calculateAttraction(targetParticle, particle, 1);
       netForce.x += attractionForce.x;
       netForce.y += attractionForce.y;
     }
