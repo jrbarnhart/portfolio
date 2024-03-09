@@ -2,24 +2,19 @@ import { ParticleInterface } from "./createParticle";
 
 const animate = ({
   particles,
-  setParticles,
   darkmode,
   canvasX,
   canvasY,
   ctx,
 }: {
   particles: ParticleInterface[];
-  setParticles: (value: ParticleInterface[]) => void;
   darkmode: string | null;
   canvasX: number;
   canvasY: number;
   ctx: CanvasRenderingContext2D;
 }) => {
-  // Create the next state for particles using new array
-  const newParticlesState = [...particles];
-
-  // For each particle in the new array
-  newParticlesState.forEach((particle) => {
+  // For each particle
+  particles.forEach((particle) => {
     // Set color based on darkmode
     particle.color = darkmode === "true" ? "purple" : "yellow";
     // Calc force v2 STATIC FOR NOW
@@ -39,15 +34,12 @@ const animate = ({
 
   // Draw particles using the new state.
   // !!!!Sync/jitter issues from async state updates? Seems fine, but monitor this.!!!!
-  newParticlesState.forEach((particle) => {
+  particles.forEach((particle) => {
     ctx.beginPath(); // Begin path for drawing the particle
     ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
     ctx.fillStyle = particle.color; // Set fill style for the particle
     ctx.fill(); // Fill the particle shape
   });
-
-  // Set the new state
-  setParticles(newParticlesState);
 };
 
 export default animate;
