@@ -1,4 +1,4 @@
-import calculateForce from "./calculateForce";
+import calculateGravity from "./calculateGravity";
 import { ParticleInterface } from "./createParticle";
 
 const animate = ({
@@ -19,7 +19,7 @@ const animate = ({
     // Set color based on darkmode
     particle.color = darkmode === "true" ? "purple" : "yellow";
     // Calc gravitational force
-    const gravity = calculateForce(particle, particles);
+    const gravity = calculateGravity(particle, particles);
     // Move particle using force
     particle.move({ x: gravity.x, y: gravity.y });
     // Reverse velocity on boundary collision

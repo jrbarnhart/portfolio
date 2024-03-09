@@ -15,7 +15,7 @@ const calculateAttraction = (
   return { x: fx, y: fy };
 };
 
-const calculateForce = (
+const calculateGravity = (
   targetParticle: ParticleInterface,
   particles: ParticleInterface[]
 ) => {
@@ -36,4 +36,4 @@ const calculateForce = (
   return netForce;
 };
 
-export default calculateForce;
+export default calculateGravity;
