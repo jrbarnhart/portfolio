@@ -1,3 +1,4 @@
+import calculateForce from "./calculateForce";
 import { ParticleInterface } from "./createParticle";
 
 const animate = ({
@@ -17,9 +18,10 @@ const animate = ({
   particles.forEach((particle) => {
     // Set color based on darkmode
     particle.color = darkmode === "true" ? "purple" : "yellow";
-    // Calc force v2 STATIC FOR NOW
+    // Calc gravitational force
+    const gravity = calculateForce(particle, particles);
     // Move particle using force
-    particle.move({ x: 0.005, y: 0.005 });
+    particle.move({ x: gravity.x, y: gravity.y });
     // Reverse velocity on boundary collision
     if (particle.x < 0 || particle.x > canvasX) {
       particle.vx *= -1;
