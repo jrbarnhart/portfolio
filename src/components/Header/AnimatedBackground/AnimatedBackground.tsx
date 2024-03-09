@@ -36,7 +36,7 @@ const AnimatedBackground = () => {
     if (canvasRef.current && canvasInitialized && !particlesInitialized) {
       // Initialize particles
       const initialParticles = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 50; i++) {
         const newParticle = createParticle({
           x: canvasRef.current.width * Math.random(),
           y: canvasRef.current.height * Math.random(),
