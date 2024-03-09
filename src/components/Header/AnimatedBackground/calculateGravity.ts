@@ -5,14 +5,18 @@ const calculateAttraction = (
   p2: ParticleInterface,
   G: number
 ) => {
+  const gravityDeadzone = 0.5;
   const dx = p1.x - p2.x;
   const dy = p1.y - p2.y;
   const distSq = dx * dx + dy * dy;
   const dist = Math.sqrt(distSq);
   const force = (G * p1.mass * p2.mass) / distSq;
-  const fx = -(force * (dx / dist));
-  const fy = -(force * (dy / dist));
-  return { x: fx, y: fy };
+  if (dist > gravityDeadzone) {
+    const fx = -(force * (dx / dist));
+    const fy = -(force * (dy / dist));
+    return { x: fx, y: fy };
+  }
+  return { x: 0, y: 0 };
 };
 
 const calculateGravity = (
@@ -23,7 +27,11 @@ const calculateGravity = (
 
   particles.forEach((particle) => {
     if (!(targetParticle.x === particle.x && targetParticle.y === particle.y)) {
-      const attractionForce = calculateAttraction(targetParticle, particle, 1);
+      const attractionForce = calculateAttraction(
+        targetParticle,
+        particle,
+        0.6
+      );
       netForce.x += attractionForce.x;
       netForce.y += attractionForce.y;
     }
