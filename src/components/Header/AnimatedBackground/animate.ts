@@ -14,14 +14,22 @@ const animate = ({
   canvasY: number;
   ctx: CanvasRenderingContext2D;
 }) => {
+  const maxVelocity = 1.25;
+
   // For each particle
   particles.forEach((particle) => {
     // Set color based on darkmode
     particle.color = darkmode === "true" ? "purple" : "yellow";
+    // Add drag to slow particles over time
+    particle.vx *= 0.995;
+    particle.vy *= 0.995;
     // Calc gravitational force
     const gravity = calculateGravity(particle, particles);
-    // Move particle using force
-    particle.move({ x: gravity.x, y: gravity.y });
+    // Move particle using force, clamping to min/max values
+    particle.move({
+      x: Math.min(Math.max(gravity.x, maxVelocity * -1), maxVelocity),
+      y: Math.min(Math.max(gravity.y, maxVelocity * -1), maxVelocity),
+    });
     // Reverse velocity on boundary collision
     if (particle.x < 0 || particle.x > canvasX) {
       particle.vx *= -1;
