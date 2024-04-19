@@ -7,7 +7,7 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <main className="justify-self-center grid gap-y-5 h-screen w-screen max-w-[768px] overflow-y-auto">
+    <main className="justify-self-center grid gap-y-5 h-screen w-full overflow-y-auto">
       <Lander />
       <Nav />
       <About />
