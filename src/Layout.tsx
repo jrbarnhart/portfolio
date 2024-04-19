@@ -1,22 +1,18 @@
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <div className="grid">
-      <Nav />
+    <main className="justify-self-center grid gap-y-5 h-screen w-full max-w-[768px] overflow-y-auto">
       <Header />
-      <main className="justify-self-center grid gap-y-5 w-full max-w-[768px]">
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
   );
 };
 
