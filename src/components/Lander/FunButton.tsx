@@ -4,7 +4,7 @@ const FunButton = () => {
       <div className="grid grid-rows-[min-content,_1fr] w-36 h-28 bg-neutral-300 border-2 border-black rounded-md">
         <div className="relative w-28 aspect-[4_/_3] bg-black justify-self-center mt-2 mb-[5px] grid items-center rounded-md">
           <div
-            className="absolute top-0 left-0 w-full h-full border-2 border-black rounded-md shadow-[inset_0_0_25px_rgba(255,_255,_255,_0.25)]"
+            className="absolute top-0 left-0 w-full h-full border-2 border-black rounded-md shadow-[inset_0_0_20px_rgba(255,_255,_255,_0.25)]"
             style={{
               backgroundImage:
                 "repeating-linear-gradient(to bottom, transparent 0px, rgba(0, 0, 0, 0.8) 3px, transparent 3px)",
