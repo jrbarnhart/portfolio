@@ -5,7 +5,7 @@ const Lander = () => {
   return (
     <div className="grid grid-rows-[min-content_minmax(min-content,_1fr)_1fr] h-screen w-full bg-transparent text-neutral-950 dark:text-neutral-50">
       <TitleCard />
-      <div className="grid content-center justify-center py-12">
+      <div className="grid content-center justify-center pt-12">
         <FunButton />
       </div>
       <div className="grid items-end">
