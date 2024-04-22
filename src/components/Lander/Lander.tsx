@@ -9,7 +9,7 @@ const Lander = () => {
         <FunButton />
       </div>
       <div className="grid items-start pt-10">
-        <p className="w-full border-t-2 border-b-2 border-green-500 text-xl text-center">
+        <p className="w-full border-t-2 border-b-2 border-green-500 text-xl md:text-2xl text-center">
           &darr;Scroll for formal experience&darr;
         </p>
       </div>
