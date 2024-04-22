@@ -7,7 +7,7 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <main className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 h-screen w-full">
+    <main className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 h-screen w-full overflow-y-scroll">
       <Lander />
       <Nav />
       <About />
