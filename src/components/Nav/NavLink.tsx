@@ -9,21 +9,23 @@ const NavLink = ({
   id: string;
   offset: number;
 }) => {
-  const [mainElement, setMainElement] = useState<HTMLElement | null>(null);
+  const [contentElement, setContentElement] = useState<HTMLElement | null>(
+    null
+  );
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    setMainElement(document.getElementById("main"));
+    setContentElement(document.getElementById("content"));
     setAnchorTarget(document.getElementById(id));
   }, [id]);
 
   const scrollIntoViewWithOffset = (offset: number) => {
-    if (anchorTarget && mainElement) {
+    if (anchorTarget && contentElement) {
       const targetTop = anchorTarget.getBoundingClientRect().top;
-      const mainTop = mainElement.getBoundingClientRect().top;
-      const scrollPosition = mainElement.scrollTop;
+      const mainTop = contentElement.getBoundingClientRect().top;
+      const scrollPosition = contentElement.scrollTop;
 
-      mainElement.scrollTo({
+      contentElement.scrollTo({
         behavior: "smooth",
         top: targetTop - mainTop - offset + scrollPosition,
       });
