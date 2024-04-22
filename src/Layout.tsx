@@ -1,5 +1,6 @@
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import ContentContainer from "./components/ContentContainer/ContentContainer";
 import Lander from "./components/Lander/Lander";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
@@ -12,11 +13,24 @@ const MainLayout = () => {
       className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 h-screen w-full overflow-y-scroll"
     >
       <Lander />
+
       <Nav />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+
+      <ContentContainer>
+        <About />
+      </ContentContainer>
+
+      <ContentContainer>
+        <Skills />
+      </ContentContainer>
+
+      <ContentContainer>
+        <Projects />
+      </ContentContainer>
+
+      <ContentContainer>
+        <Contact />
+      </ContentContainer>
     </div>
   );
 };
