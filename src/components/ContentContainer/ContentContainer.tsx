@@ -1,5 +1,9 @@
 const ContentContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className="w-full px-1">{children}</div>;
+  return (
+    <div className="justify-self-center w-full max-w-[1024px] px-1 md:px-3 lg:px-6">
+      {children}
+    </div>
+  );
 };
 
 export default ContentContainer;
