@@ -10,7 +10,7 @@ const MainLayout = () => {
   return (
     <div
       id="content"
-      className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 h-screen w-full overflow-y-scroll"
+      className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 md:gap-y-8 lg:gap-y-12 h-screen w-full overflow-y-scroll"
     >
       <Lander />
 
