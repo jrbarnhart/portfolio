@@ -48,7 +48,7 @@ const NavLink = ({
       >
         {children}
       </a>
-      <div className="group-hover:opacity-100 absolute top-0 -z-10 h-full w-full scale-150 border-b-2 border-blue-500 opacity-0" />
+      <div className="group-hover:opacity-100 absolute top-0 -z-10 h-full w-full scale-150 border-b-2 border-green-500 opacity-0" />
     </div>
   );
 };
