@@ -7,8 +7,8 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <main
-      id="main"
+    <div
+      id="content"
       className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 h-screen w-full overflow-y-scroll"
     >
       <Lander />
@@ -17,7 +17,7 @@ const MainLayout = () => {
       <Skills />
       <Projects />
       <Contact />
-    </main>
+    </div>
   );
 };
 
