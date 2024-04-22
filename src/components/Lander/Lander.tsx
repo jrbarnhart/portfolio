@@ -3,7 +3,7 @@ import TitleCard from "./TitleCard";
 
 const Lander = () => {
   return (
-    <div className="grid grid-rows-[min-content_repeat(2,_minmax(min-content,_1fr))] h-[max(100vh,_800px)] w-full bg-transparent text-neutral-950 dark:text-neutral-50">
+    <div className="grid grid-rows-[min-content_repeat(2,_minmax(min-content,_1fr))] h-[max(100vh,_800px)] w-full bg-zinc-800 text-neutral-50">
       <TitleCard />
       <div className="grid content-center justify-center pt-12">
         <FunButton />
