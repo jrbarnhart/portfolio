@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 const NavLink = ({
   children,
-  id,
+  targetId,
   offset,
 }: {
   children: React.ReactNode;
-  id: string;
+  targetId: string;
   offset: number;
 }) => {
   const [contentElement, setContentElement] = useState<HTMLElement | null>(
@@ -16,8 +16,8 @@ const NavLink = ({
 
   useEffect(() => {
     setContentElement(document.getElementById("content"));
-    setAnchorTarget(document.getElementById(id));
-  }, [id]);
+    setAnchorTarget(document.getElementById(targetId));
+  }, [targetId]);
 
   const scrollIntoViewWithOffset = (offset: number) => {
     if (anchorTarget && contentElement) {
@@ -40,7 +40,7 @@ const NavLink = ({
   return (
     <div className="relative group">
       <a
-        href={id}
+        href={targetId}
         onClick={(e) => {
           handleClick(e);
         }}
