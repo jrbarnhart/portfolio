@@ -8,7 +8,7 @@ const Nav = () => {
   );
 
   useEffect(() => {
-    setContentElement(document.getElementById("root"));
+    setContentElement(document.getElementById("content"));
   }, []);
 
   return (
