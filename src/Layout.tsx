@@ -8,17 +8,14 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <div
-      id="content"
-      className="bg-neutral-50 dark:bg-zinc-900 justify-self-center grid gap-y-5 md:gap-y-8 lg:gap-y-12 h-screen w-screen overflow-y-scroll"
-    >
+    <>
       <Lander />
-
       <Nav />
 
       <ContentContainer>
         <About />
       </ContentContainer>
+      <div className="h-12 z-[1000] w-screen sticky top-0 bg-gradient-to-t from-red-500 to-blue-500"></div>
 
       <ContentContainer>
         <Skills />
@@ -31,7 +28,7 @@ const MainLayout = () => {
       <ContentContainer>
         <Contact />
       </ContentContainer>
-    </div>
+    </>
   );
 };
 
