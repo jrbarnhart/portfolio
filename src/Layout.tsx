@@ -8,7 +8,7 @@ import Skills from "./components/Skills/Skills";
 
 const MainLayout = () => {
   return (
-    <>
+    <div className="relative grid gap-y-5 md:gap-y-8 lg:gap-y-12 h-screen w-screen overflow-y-scroll">
       <Lander />
       <Nav />
 
@@ -27,7 +27,7 @@ const MainLayout = () => {
       <ContentContainer>
         <Contact />
       </ContentContainer>
-    </>
+    </div>
   );
 };
 
