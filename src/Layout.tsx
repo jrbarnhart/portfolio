@@ -15,7 +15,6 @@ const MainLayout = () => {
       <ContentContainer>
         <About />
       </ContentContainer>
-      <div className="h-12 z-[1000] w-screen sticky top-0 bg-gradient-to-t from-red-500 to-blue-500"></div>
 
       <ContentContainer>
         <Skills />
