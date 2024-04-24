@@ -4,7 +4,7 @@ import ContentContainer from "./components/ContentContainer/ContentContainer";
 import Lander from "./components/Lander/Lander";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
-import Skills from "./components/Skills/Skills";
+import Skills from "./components/About/Skills";
 
 const MainLayout = () => {
   return (
