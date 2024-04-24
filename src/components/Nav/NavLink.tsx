@@ -4,18 +4,16 @@ const NavLink = ({
   children,
   targetId,
   offset,
+  contentElement,
 }: {
   children: React.ReactNode;
   targetId: string;
   offset: number;
+  contentElement: HTMLElement | null;
 }) => {
-  const [contentElement, setContentElement] = useState<HTMLElement | null>(
-    null
-  );
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    setContentElement(document.getElementById("content"));
     setAnchorTarget(document.getElementById(targetId));
   }, [targetId]);
 
