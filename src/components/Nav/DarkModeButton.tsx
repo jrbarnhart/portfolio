@@ -29,7 +29,7 @@ const DarkModeButton = () => {
   return (
     <button
       onClick={toggleDarkmode}
-      className="w-fit justify-self-end h-9 m-3 p-1 hover:text-green-500 text-neutral-50 border-2 hover:border-green-500 border-neutral-50 rounded-full aspect-square grid justify-center content-center"
+      className="w-fit justify-self-end h-9 m-3 md:mr-5 lg:mr-6 p-1 hover:text-green-500 text-neutral-50 border-2 hover:border-green-500 border-neutral-50 rounded-full aspect-square grid justify-center content-center"
     >
       {darkmode === "true" ? (
         <svg
