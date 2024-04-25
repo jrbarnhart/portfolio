@@ -5,6 +5,7 @@ import Lander from "./components/Lander/Lander";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/About/Skills";
+import Footer from "./components/Footer/Footer";
 
 const MainLayout = () => {
   return (
@@ -29,6 +30,10 @@ const MainLayout = () => {
 
       <ContentContainer>
         <Contact />
+      </ContentContainer>
+
+      <ContentContainer>
+        <Footer />
       </ContentContainer>
     </div>
   );
