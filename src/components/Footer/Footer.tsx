@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div>
-      <p>Credits</p>
+      <Link to="credits">Credits</Link>
     </div>
   );
 };
