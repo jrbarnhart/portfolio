@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/Root";
 import ErrorPage from "./routes/ErrorPage";
 
@@ -11,7 +11,7 @@ const Router = () => {
     },
   ]);
 
-  return router;
+  return <RouterProvider router={router} />;
 };
 
 export default Router;
