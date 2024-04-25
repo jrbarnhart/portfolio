@@ -32,9 +32,7 @@ const MainLayout = () => {
         <Contact />
       </ContentContainer>
 
-      <ContentContainer>
-        <Footer />
-      </ContentContainer>
+      <Footer />
     </div>
   );
 };
