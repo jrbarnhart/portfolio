@@ -23,7 +23,7 @@ const SVGLink = ({
       >
         {children}
       </div>
-      <p className="self-end h-full w-full bg-zinc-950 rounded-b-lg text-center align-bottom">
+      <p className="self-end h-full w-full bg-zinc-950 rounded-b-md text-neutral-50 text-center align-bottom">
         {skillName}
       </p>
     </a>
