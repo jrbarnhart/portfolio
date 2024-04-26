@@ -11,7 +11,7 @@ const ProjectCard = ({
   alt,
 }: ProjectCardProps) => {
   return (
-    <div className="grid md:grid-cols-2 gap-x-2 md:gap-x-4 gap-y-4 p-3 border-b-2 last:border-b-0 border-green-500">
+    <div className="grid md:grid-cols-2 gap-x-2 md:gap-x-4 gap-y-4 p-3 pb-6 border-b-2 last:border-b-0 border-green-500">
       <h2 className="col-span-full justify-self-center text-center text-2xl md:text-3xl font-bold">
         {title}
       </h2>
