@@ -234,17 +234,14 @@ export const IconCredits = () => {
         , Public domain, via Wikimedia Commons
       </p>
       <p>
-        HTML Icon:{" "}
-        <a href="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg">
-          W3C
-        </a>
-        , <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>,
-        via Wikimedia Commons
+        HTML Icon: <a href="https://www.w3.org/html/logo/">W3C</a>,{" "}
+        <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>
       </p>
       <p>
         CSS Icon:{" "}
-        <a href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg">
-          Rudloff
+        <a href="https://commons.wikimedia.org/wiki/File:CSS3_logo.svg">
+          daPhyre (File:CSS3 and HTML5 logos and wordmarks.svg)Elfi (File:CSS3
+          logo and wordmark.svg)ExE Boss
         </a>
         , <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>,
         via Wikimedia Commons
