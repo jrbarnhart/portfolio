@@ -13,7 +13,7 @@ const SVGLink = ({
 }) => {
   return (
     <a
-      className="grid grid-rows-[90px_min-content] grid-cols-[80px] items-center justify-items-center border-2 border-green-500 rounded-lg"
+      className="grid grid-rows-[80px_min-content] md:grid-rows-[96px_min-content] grid-cols-[80px] md:grid-cols-[96px] items-center justify-items-center border-2 border-green-500 rounded-lg"
       href={link}
     >
       <div
