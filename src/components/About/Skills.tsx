@@ -8,37 +8,46 @@ const Skills = () => {
         Skills
       </h3>
       <div className="justify-self-center w-full flex flex-wrap gap-x-10 gap-y-8 justify-center p-5">
-        <SVGLink link="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+        <SVGLink
+          skillName="JavaScript"
+          link="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        >
           <Icons.js />
         </SVGLink>
-        <SVGLink link="https://developer.mozilla.org/en-US/docs/Web/HTML">
+        <SVGLink
+          skillName="HTML"
+          link="https://developer.mozilla.org/en-US/docs/Web/HTML"
+        >
           <Icons.html />
         </SVGLink>
-        <SVGLink link="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        <SVGLink
+          skillName="CSS"
+          link="https://developer.mozilla.org/en-US/docs/Web/CSS"
+        >
           <Icons.css />
         </SVGLink>
-        <SVGLink link="https://tailwindcss.com/">
-          <Icons.tailwind />
-        </SVGLink>
-        <SVGLink link="https://www.typescriptlang.org/">
+        <SVGLink skillName="TypeScript" link="https://www.typescriptlang.org/">
           <Icons.ts />
         </SVGLink>
-        <SVGLink link="https://nodejs.org/">
+        <SVGLink skillName="Tailwind" link="https://tailwindcss.com/">
+          <Icons.tailwind />
+        </SVGLink>
+        <SVGLink skillName="Node.js" link="https://nodejs.org/">
           <Icons.node />
         </SVGLink>
-        <SVGLink link="https://react.dev/">
+        <SVGLink skillName="React" link="https://react.dev/">
           <Icons.react />
         </SVGLink>
-        <SVGLink link="https://vitejs.dev/">
+        <SVGLink skillName="Vite" link="https://vitejs.dev/">
           <Icons.vite />
         </SVGLink>
-        <SVGLink link="https://nextjs.org/">
+        <SVGLink skillName="Next.js" link="https://nextjs.org/">
           <Icons.next />
         </SVGLink>
-        <SVGLink link="https://expressjs.com/">
+        <SVGLink skillName="Express.js" link="https://expressjs.com/">
           <Icons.express />
         </SVGLink>
-        <SVGLink link="https://www.mongodb.com/">
+        <SVGLink skillName="MongoDB" link="https://www.mongodb.com/">
           <Icons.mongoDb />
         </SVGLink>
       </div>
