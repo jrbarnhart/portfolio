@@ -7,7 +7,11 @@ const SVGLink = ({
   children: React.ReactNode;
   link: string;
 }) => {
-  return <a href={link}>{children}</a>;
+  return (
+    <a className="max-h-12 max-w-12" href={link}>
+      {children}
+    </a>
+  );
 };
 
 export default SVGLink;
