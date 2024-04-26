@@ -13,7 +13,7 @@ const ProjectScreenshot = ({
 }) => {
   const [linksVisible, setLinksVisible] = useState(false);
   const visibleClasses =
-    "not-sr-only absolute top-0 grid grid-flow-col w-full max-w-[600px] h-full justify-items-center items-center";
+    "not-sr-only absolute top-0 grid grid-flow-col gap-x-10 w-full max-w-[600px] h-full items-center";
   const notVisibleClasses = "sr-only";
 
   return (
@@ -27,13 +27,13 @@ const ProjectScreenshot = ({
       onMouseLeave={() => {
         setLinksVisible(false);
       }}
-      className="relative justify-self-center grid row-span-2 md:col-start-2"
+      className="relative justify-self-center grid row-span-2 md:col-start-2 border-2 border-green-500 rounded-2xl"
     >
       <img className="rounded-xl" src={src} alt={alt} />
       <div className={linksVisible ? visibleClasses : notVisibleClasses}>
-        <div className="bg-neutral-600 opacity-50 rounded-xl h-full w-full absolute top-0" />
+        <div className="bg-neutral-950 opacity-90 rounded-xl h-full w-full absolute top-0" />
         <a
-          className="bg-neutral-600 rounded-lg px-2 border-black border-2 py-1 text-2xl z-10"
+          className="justify-self-end w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center z-10"
           href={demoUrl}
           target="_blank"
           rel="noreferrer"
@@ -47,7 +47,7 @@ const ProjectScreenshot = ({
           Demo
         </a>
         <a
-          className="bg-neutral-600 rounded-lg px-2 border-black border-2 py-1 text-2xl z-10"
+          className="w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center z-10"
           href={codeUrl}
           target="_blank"
           rel="noreferrer"
