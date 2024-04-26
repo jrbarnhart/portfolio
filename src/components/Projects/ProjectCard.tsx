@@ -11,7 +11,7 @@ const ProjectCard = ({
   alt,
 }: ProjectCardProps) => {
   return (
-    <div className="grid md:grid-cols-2 gap-x-2 gap-y-4 p-3 border-b-2 border-green-500">
+    <div className="grid md:grid-cols-2 gap-x-2 gap-y-4 p-3 border-b-2 last:border-b-0 border-green-500">
       <h2 className="col-span-full justify-self-center text-center text-2xl md:text-3xl font-bold">
         {title}:
       </h2>
@@ -22,10 +22,9 @@ const ProjectCard = ({
         codeUrl={codeUrl}
       />
       <div className="justify-self-center">
-        <p className="font-bold">{description}</p>
+        <p className="text-xl">{description}</p>
         <div>
-          <h3 className="text-lg">Skills & Tech</h3>
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-x-2 flex-wrap font-bold text-lg">
             {skills.map((skill) => {
               return <p key={skill}>&#x2022;{skill}</p>;
             })}
