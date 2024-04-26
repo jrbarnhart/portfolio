@@ -32,7 +32,7 @@ const Skills = () => {
         <SVGLink skillName="Tailwind" link="https://tailwindcss.com/">
           <Icons.tailwind />
         </SVGLink>
-        <SVGLink skillName="Node.js" link="https://nodejs.org/">
+        <SVGLink skillName="Node.js" link="https://nodejs.org/" bgLight={true}>
           <Icons.node />
         </SVGLink>
         <SVGLink skillName="React" link="https://react.dev/">
@@ -41,7 +41,7 @@ const Skills = () => {
         <SVGLink skillName="Vite" link="https://vitejs.dev/">
           <Icons.vite />
         </SVGLink>
-        <SVGLink skillName="Next.js" link="https://nextjs.org/">
+        <SVGLink skillName="Next.js" link="https://nextjs.org/" bgLight={true}>
           <Icons.next />
         </SVGLink>
         <SVGLink skillName="Express.js" link="https://expressjs.com/">
