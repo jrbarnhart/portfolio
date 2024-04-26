@@ -8,7 +8,7 @@ const SVGLink = ({
   link: string;
 }) => {
   return (
-    <a className="h-12 w-12" href={link}>
+    <a className="size-20" href={link}>
       {children}
     </a>
   );
