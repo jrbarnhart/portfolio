@@ -17,8 +17,8 @@ const SVGLink = ({
       href={link}
     >
       <div
-        className={`grid items-center justify-items-center p-1 w-full h-full rounded-t-lg ${
-          bgLight ? "bg-zinc-50" : "bg-zinc-950"
+        className={`grid items-center justify-items-center p-1 w-full h-full rounded-t-md ${
+          bgLight ? "bg-zinc-100" : "bg-zinc-950"
         }`}
       >
         {children}
