@@ -19,13 +19,13 @@ const SVGLink = ({
       <div
         className={`grid items-center justify-items-center p-2 w-full h-full rounded-t-md ${
           bgLight
-            ? "bg-zinc-100 group-hover:bg-green-300"
-            : "bg-zinc-950 group-hover:bg-green-950"
+            ? "bg-zinc-100 group-hover:bg-green-300 group-active:bg-green-300"
+            : "bg-zinc-950 group-hover:bg-green-950 group-active:bg-green-950"
         }`}
       >
         {children}
       </div>
-      <p className="self-end h-full w-full bg-zinc-950 group-hover:bg-green-950 rounded-b-md text-neutral-50 text-center align-bottom">
+      <p className="self-end h-full w-full bg-zinc-950 group-hover:bg-green-950 group-active:bg-green-950 rounded-b-md text-neutral-50 text-center align-bottom">
         {skillName}
       </p>
     </a>
