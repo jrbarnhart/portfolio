@@ -11,7 +11,7 @@ const MainLayout = () => {
   return (
     <div
       id="content"
-      className="relative grid gap-y-5 md:gap-y-8 lg:gap-y-12 h-screen w-screen overflow-y-scroll"
+      className="relative grid h-screen w-screen overflow-y-scroll"
     >
       <Lander />
       <Nav />
