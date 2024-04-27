@@ -4,7 +4,7 @@ import SVGLink from "../SVGLink/SVGLink";
 const Skills = () => {
   return (
     <div className="grid">
-      <h3 className="col-span-full justify-self-center w-min border-b-2 border-green-500 text-center text-2xl md:text-3xl font-bold">
+      <h3 className="col-span-full justify-self-center w-min text-center text-2xl md:text-3xl font-bold">
         Skills
       </h3>
       <div className="justify-self-center w-full max-w-[768px] flex flex-wrap gap-5 justify-center content-center p-5">
