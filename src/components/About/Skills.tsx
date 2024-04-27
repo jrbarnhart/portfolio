@@ -3,7 +3,7 @@ import SVGLink from "../SVGLink/SVGLink";
 
 const Skills = () => {
   return (
-    <div className="grid mb-10 md:mb-20">
+    <div className="grid mb-12 md:mb-32">
       <h3 className="col-span-full justify-self-center w-min text-center text-2xl md:text-3xl font-bold">
         Skills
       </h3>
