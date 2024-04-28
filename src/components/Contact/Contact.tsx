@@ -83,7 +83,7 @@ const Contact = () => {
           className="h-20 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
         <input
-          type="submit"
+          type="button"
           value="Submit Message"
           required
           className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 hover:bg-green-600 active:bg-green-600 border-2 border-zinc-950 dark:border-zinc-300 rounded-md text-xl font-bold"
