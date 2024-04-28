@@ -33,7 +33,7 @@ const ProjectScreenshot = ({
       <div className={linksVisible ? visibleClasses : notVisibleClasses}>
         <div className="bg-neutral-950 opacity-90 rounded-xl h-full w-full absolute top-0" />
         <a
-          className="justify-self-end w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center z-10"
+          className="justify-self-end w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center text-neutral-50 z-10"
           href={demoUrl}
           target="_blank"
           rel="noreferrer"
@@ -47,7 +47,7 @@ const ProjectScreenshot = ({
           Demo
         </a>
         <a
-          className="w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center z-10"
+          className="w-24 bg-zinc-950 rounded-lg px-2 py-1 border-green-500 border-2 text-2xl text-center text-neutral-50 z-10"
           href={codeUrl}
           target="_blank"
           rel="noreferrer"
