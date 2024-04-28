@@ -22,7 +22,7 @@ const Nav = () => {
         <li>
           <NavLink
             targetId="projects"
-            offset={85}
+            offset={75}
             contentElement={contentElement}
           >
             Projects
@@ -31,7 +31,7 @@ const Nav = () => {
         <li>
           <NavLink
             targetId="contact"
-            offset={85}
+            offset={95}
             contentElement={contentElement}
           >
             Contact
