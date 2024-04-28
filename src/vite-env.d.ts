@@ -2,7 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
-  readonly EMAILJS_PUBLIC_KEY: string;
+  readonly VITE_EMAILJS_PUBLIC_KEY: string;
 }
 
 interface ImportMeta {
