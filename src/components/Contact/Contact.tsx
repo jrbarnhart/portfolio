@@ -42,13 +42,14 @@ const Contact = () => {
         <input
           type="text"
           name="user_name"
+          required
           className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
         <label
           htmlFor="user_company"
           className="px-1 md:px-2 text-xl md:text-2xl"
         >
-          Organization: <span className="text-sm md:text-base">(Optional)</span>
+          Company/Org: <span className="text-sm md:text-base">(Optional)</span>
         </label>
         <input
           type="text"
@@ -64,6 +65,7 @@ const Contact = () => {
         <input
           type="email"
           name="user_email"
+          required
           className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
         <label
@@ -79,7 +81,8 @@ const Contact = () => {
         <input
           type="submit"
           value="Submit Message"
-          className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 border-2 border-zinc-950 rounded-md text-xl font-bold"
+          required
+          className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 hover:bg-green-600 active:bg-green-600 border-2 border-zinc-950 dark:border-zinc-300 rounded-md text-xl font-bold"
         />
       </form>
     </div>
