@@ -1,15 +1,15 @@
-import emailjs from "@emailjs/browser";
-import React, { useRef } from "react";
+// import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
-interface EmailJSResponse {
+/* interface EmailJSResponse {
   status: string;
   text: string;
-}
+} */
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail: React.FormEventHandler = (event) => {
+  /*   const sendEmail: React.FormEventHandler = (event) => {
     event.preventDefault();
 
     if (!form.current) {
@@ -29,7 +29,7 @@ const Contact = () => {
           console.log("FAILED...", error.text);
         }
       );
-  };
+  }; */
 
   return (
     <div
