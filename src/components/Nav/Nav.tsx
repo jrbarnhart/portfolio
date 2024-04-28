@@ -31,7 +31,7 @@ const Nav = () => {
         <li>
           <NavLink
             targetId="contact"
-            offset={10}
+            offset={85}
             contentElement={contentElement}
           >
             Contact
