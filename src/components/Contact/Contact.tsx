@@ -1,28 +1,32 @@
 import emailjs from "@emailjs/browser";
 import React, { useRef } from "react";
 
+interface EmailJSResponse {
+  status: string;
+  text: string;
+}
+
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail: React.FormEventHandler = (event) => {
     event.preventDefault();
 
-    if (!form.current) return;
+    if (!form.current) {
+      console.log("React useRef form not found.");
+      return;
+    }
 
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
+      .sendForm("service_5yfhcpc", "contact_form", form.current, {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {
           console.log("SUCCESS!");
         },
-        (error) => {
-          if ("text" in error) {
-            console.log("FAILED...", (error as { text: string }).text);
-          } else {
-            console.log("FAILED... Unknown error");
-          }
+        (error: EmailJSResponse) => {
+          console.log("FAILED...", error.text);
         }
       );
   };
