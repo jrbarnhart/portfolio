@@ -1,9 +1,87 @@
+import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
+
 const Contact = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail: React.FormEventHandler = (event) => {
+    event.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
+        publicKey: "YOUR_PUBLIC_KEY",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          if ("text" in error) {
+            console.log("FAILED...", (error as { text: string }).text);
+          } else {
+            console.log("FAILED... Unknown error");
+          }
+        }
+      );
+  };
+
   return (
-    <div id="contact">
-      <p>Contact links</p>
-      <p>Contact form</p>
-      <p>Other contact info</p>
+    <div
+      id="contact"
+      className="grid justify-items-center gap-y-4 md:gap-y-8 px-5 mb-36"
+    >
+      <h2 className="col-span-full justify-self-center w-full border-b-2 border-t-2 border-green-500 text-center text-3xl md:text-4xl font-bold">
+        Contact Me
+      </h2>
+      <form className="grid gap-y-2 w-full max-w-[512px]" ref={form}>
+        <label htmlFor="user_name" className="px-1 md:px-2 text-xl md:text-2xl">
+          Name:
+        </label>
+        <input
+          type="text"
+          name="user_name"
+          className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
+        />
+        <label
+          htmlFor="user_company"
+          className="px-1 md:px-2 text-xl md:text-2xl"
+        >
+          Organization: <span className="text-sm md:text-base">(Optional)</span>
+        </label>
+        <input
+          type="text"
+          name="user_company"
+          className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
+        />
+        <label
+          htmlFor="user_email"
+          className="px-1 md:px-2 text-xl md:text-2xl"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          name="user_email"
+          className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
+        />
+        <label
+          htmlFor="user_message"
+          className="px-1 md:px-2 text-xl md:text-2xl"
+        >
+          Message
+        </label>
+        <textarea
+          name="user_message"
+          className="h-20 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
+        />
+        <input
+          type="submit"
+          value="Submit Message"
+          className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 border-2 border-zinc-950 rounded-md text-xl font-bold"
+        />
+      </form>
     </div>
   );
 };
