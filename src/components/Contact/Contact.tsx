@@ -37,7 +37,7 @@ const Contact = () => {
       className="grid justify-items-center gap-y-4 md:gap-y-8 px-5 mb-36"
     >
       <h2 className="col-span-full justify-self-center w-full border-b-2 border-t-2 border-green-500 text-center text-3xl md:text-4xl font-bold">
-        Contact Me
+        Contact Me (NYI)
       </h2>
       <form className="grid gap-y-2 w-full max-w-[512px]" ref={form}>
         <label htmlFor="user_name" className="px-1 md:px-2 text-xl md:text-2xl">
