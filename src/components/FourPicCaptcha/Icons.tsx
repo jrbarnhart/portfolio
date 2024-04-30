@@ -1,11 +1,6 @@
 const cat = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 33.867 33.867"
-      height="128"
-      width="128"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.867 33.867">
       <path
         d="M19.423 25.89c0 1.317-1.115 2.313-2.49 2.313-1.375 0-2.49-.996-2.49-2.313"
         fill="#89644b"
@@ -110,12 +105,7 @@ const cat = () => {
 
 const apple = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 33.867 33.867"
-      height="128"
-      width="128"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.867 33.867">
       <g paintOrder="markers fill stroke">
         <path
           d="M16.273.602h1.49c1.103 2.693.087 4.63 0 6.874h-1.49c.346-1.247.556-4.21.556-4.21.111-1.204-.7-2.634-.556-2.664z"
@@ -142,12 +132,7 @@ const apple = () => {
 
 const umbrella = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 33.867 33.867"
-      height="128"
-      width="128"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.867 33.867">
       <path
         fill="#999"
         stroke="#000"
@@ -208,12 +193,7 @@ const umbrella = () => {
 
 const key = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 33.867 33.867"
-      height="128"
-      width="128"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.867 33.867">
       <g
         transform="matrix(1.13095 0 0 1.13095 -.621 -299.809)"
         paintOrder="markers fill stroke"
