@@ -46,6 +46,7 @@ const Contact = () => {
         <input
           type="text"
           name="user_name"
+          id="user_name"
           required
           className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
@@ -58,6 +59,7 @@ const Contact = () => {
         <input
           type="text"
           name="user_company"
+          id="user_company"
           className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
         <label
@@ -69,6 +71,7 @@ const Contact = () => {
         <input
           type="email"
           name="user_email"
+          id="user_email"
           required
           className="h-10 md:h-12 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
@@ -80,6 +83,7 @@ const Contact = () => {
         </label>
         <textarea
           name="user_message"
+          id="user_message"
           className="h-20 px-1 md:px-2 bg-zinc-200 border-2 border-green-500 rounded-md text-lg md:text-xl text-neutral-950"
         />
         <input
