@@ -6,7 +6,6 @@ import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/About/Skills";
 import Footer from "./components/Footer/Footer";
-import FourPicCaptcha from "./components/FourPicCaptcha/FourPicCaptcha";
 
 const MainLayout = () => {
   return (
@@ -32,8 +31,6 @@ const MainLayout = () => {
       <ContentContainer>
         <Contact />
       </ContentContainer>
-
-      <FourPicCaptcha />
 
       <Footer />
     </div>
