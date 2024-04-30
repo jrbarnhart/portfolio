@@ -1,7 +1,17 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Icons from "./Icons";
 
-const FourPicCaptcha = () => {
+const FourPicCaptcha = ({
+  setShowCaptcha,
+}: {
+  setShowCaptcha: React.Dispatch<SetStateAction<boolean>>;
+}) => {
   const [pictures, setPictures] = useState<string[]>([
     "cat",
     "apple",
@@ -15,6 +25,10 @@ const FourPicCaptcha = () => {
     apple: <Icons.apple />,
     umbrella: <Icons.umbrella />,
     key: <Icons.key />,
+  };
+
+  const handleCloseButton = () => {
+    setShowCaptcha(false);
   };
 
   const shufflePictures = useCallback(() => {
@@ -39,7 +53,10 @@ const FourPicCaptcha = () => {
         <div className="border-b-2 border-zinc-950">
           <p className="text-xl">Human verification:</p>
           <p className="text-3xl font-bold">Select the cat</p>
-          <button className="absolute top-0 right-0 py-5 px-6 font-bold text-xl text-red-500">
+          <button
+            onClick={handleCloseButton}
+            className="absolute top-0 right-0 py-5 px-6 font-bold text-xl text-red-500"
+          >
             X
           </button>
         </div>
