@@ -20,9 +20,9 @@ const FourPicCaptcha = ({
     "umbrella",
     "key",
   ]);
-
   const hasShuffled = useRef<boolean>(false);
-  const answer = useRef<string>("");
+
+  const [answer, setAnswer] = useState<string>("");
 
   const componentMap: Record<string, React.ReactNode> = {
     cat: <Icons.cat />,
@@ -35,9 +35,15 @@ const FourPicCaptcha = ({
     setShowCaptcha(false);
   };
 
+  const handleChoiceButton = (key: string) => {
+    if (key === answer) {
+      onVerify();
+    }
+  };
+
   const setRandomAnswer = useCallback(() => {
     const randIndex = Math.floor(Math.random() * 4);
-    answer.current = pictures[randIndex];
+    setAnswer(pictures[randIndex]);
   }, [pictures]);
 
   const shufflePictures = useCallback(() => {
@@ -62,7 +68,7 @@ const FourPicCaptcha = ({
       <div className="relative grid gap-y-3 w-[300px] bg-zinc-100 dark:bg-zinc-800 rounded-lg p-5 border-2 border-zinc-950">
         <div className="border-b-2 border-zinc-950">
           <p className="text-xl">Human verification:</p>
-          <p className="text-3xl font-bold">Select the {answer.current}</p>
+          <p className="text-3xl font-bold">Select the {answer}</p>
           <button
             onClick={handleCloseButton}
             className="absolute top-0 right-0 py-5 px-6 font-bold text-xl text-red-500"
@@ -73,12 +79,15 @@ const FourPicCaptcha = ({
         <div className="grid grid-cols-2 gap-3">
           {pictures.map((name) => {
             return (
-              <div
+              <button
                 className="p-3 bg-zinc-600 border-2 border-green-500 rounded-md"
                 key={name}
+                onClick={() => {
+                  handleChoiceButton(name);
+                }}
               >
                 {componentMap[name]}
-              </div>
+              </button>
             );
           })}
         </div>
