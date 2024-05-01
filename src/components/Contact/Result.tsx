@@ -1,12 +1,15 @@
 const Result = ({ sendSuccess }: { sendSuccess: boolean }) => {
   return (
     <div>
-      <p>
-        Result:{" "}
-        {sendSuccess
-          ? "Message sent!"
-          : "Error. Message not sent. Please try again."}{" "}
-      </p>
+      {sendSuccess ? (
+        <p className="md:text-xl font-bold">
+          Message sent! Check your inbox for verification.
+        </p>
+      ) : (
+        <p className="md:text-xl text-red-500 font-bold">
+          Error: Message not sent. Please try again.
+        </p>
+      )}
     </div>
   );
 };
