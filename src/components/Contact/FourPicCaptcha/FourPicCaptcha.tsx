@@ -9,8 +9,10 @@ import Icons from "./Icons";
 
 const FourPicCaptcha = ({
   setShowCaptcha,
+  onVerify,
 }: {
   setShowCaptcha: React.Dispatch<SetStateAction<boolean>>;
+  onVerify: () => void;
 }) => {
   const [pictures, setPictures] = useState<string[]>([
     "cat",
