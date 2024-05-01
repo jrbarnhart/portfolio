@@ -1,19 +1,17 @@
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import FourPicCaptcha from "./FourPicCaptcha/FourPicCaptcha";
 
-/* interface EmailJSResponse {
+interface EmailJSResponse {
   status: string;
   text: string;
-} */
+}
 
 const Contact = () => {
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
   const form = useRef<HTMLFormElement | null>(null);
 
-  /*   const sendEmail: React.FormEventHandler = (event) => {
-    event.preventDefault();
-
+  const sendEmail = () => {
     if (!form.current) {
       console.log("React useRef form not found.");
       return;
@@ -31,7 +29,7 @@ const Contact = () => {
           console.log("FAILED...", error.text);
         }
       );
-  }; */
+  };
 
   const handleSubmit: React.FormEventHandler = (event) => {
     event.preventDefault();
@@ -104,7 +102,9 @@ const Contact = () => {
           className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 hover:bg-green-600 active:bg-green-600 border-2 border-zinc-950 dark:border-zinc-300 rounded-md text-xl font-bold"
         />
       </form>
-      {showCaptcha && <FourPicCaptcha setShowCaptcha={setShowCaptcha} />}
+      {showCaptcha && (
+        <FourPicCaptcha setShowCaptcha={setShowCaptcha} onVerify={sendEmail} />
+      )}
     </div>
   );
 };
