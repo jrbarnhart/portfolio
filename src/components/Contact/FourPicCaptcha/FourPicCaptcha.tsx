@@ -20,7 +20,9 @@ const FourPicCaptcha = ({
     "umbrella",
     "key",
   ]);
+
   const hasShuffled = useRef<boolean>(false);
+  const answer = useRef<string>("");
 
   const componentMap: Record<string, React.ReactNode> = {
     cat: <Icons.cat />,
@@ -32,6 +34,11 @@ const FourPicCaptcha = ({
   const handleCloseButton = () => {
     setShowCaptcha(false);
   };
+
+  const setRandomAnswer = useCallback(() => {
+    const randIndex = Math.floor(Math.random() * 4);
+    answer.current = pictures[randIndex];
+  }, [pictures]);
 
   const shufflePictures = useCallback(() => {
     if (hasShuffled.current) return;
@@ -47,14 +54,15 @@ const FourPicCaptcha = ({
 
   useEffect(() => {
     shufflePictures();
-  }, [shufflePictures]);
+    setRandomAnswer();
+  }, [setRandomAnswer, shufflePictures]);
 
   return (
     <div className="fixed z-50 top-0 left-0 grid items-center justify-items-center w-screen h-screen bg-zinc-900 bg-opacity-80">
       <div className="relative grid gap-y-3 w-[300px] bg-zinc-100 dark:bg-zinc-800 rounded-lg p-5 border-2 border-zinc-950">
         <div className="border-b-2 border-zinc-950">
           <p className="text-xl">Human verification:</p>
-          <p className="text-3xl font-bold">Select the cat</p>
+          <p className="text-3xl font-bold">Select the {answer.current}</p>
           <button
             onClick={handleCloseButton}
             className="absolute top-0 right-0 py-5 px-6 font-bold text-xl text-red-500"
