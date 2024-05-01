@@ -56,7 +56,6 @@ const FourPicCaptcha = ({
   }, [pictures]);
 
   const handleChoiceButton = (key: string) => {
-    console.log(tries);
     if (key === answer) {
       onVerify();
     } else if (tries > 1) {
