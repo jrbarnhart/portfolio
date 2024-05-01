@@ -1,7 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import FourPicCaptcha from "./FourPicCaptcha/FourPicCaptcha";
-import Loading from "./Loading";
 import Result from "./Result";
 
 interface EmailJSResponse {
@@ -26,30 +25,34 @@ const Contact = () => {
     setShowCaptcha(false);
     setLoading(true);
 
-    setTimeout(() => {
+    /*    Used for testing purposes 
+
+      setTimeout(() => {
       setLoading(false);
       setShowResult(true);
       setSendSuccess(true);
-    }, 2000);
+      form.current?.reset();
+    }, 2000); */
 
-    /*     emailjs
+    emailjs
       .sendForm("service_5yfhcpc", "contact_form", form.current, {
         publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {
           console.log("SUCCESS!");
-          setShowLoading(false);
-          setSendSuccess(true);
+          setLoading(false);
           setShowResult(true);
+          setSendSuccess(true);
+          form.current?.reset();
         },
         (error: EmailJSResponse) => {
           console.log("FAILED...", error.text);
-          setShowLoading(false);
-          setSendSuccess(false);
+          setLoading(false);
           setShowResult(true);
+          setSendSuccess(false);
         }
-      ); */
+      );
   };
 
   const onReject = () => {
@@ -135,7 +138,6 @@ const Contact = () => {
           className="justify-self-center h-14 w-48 mt-5 bg-green-400 dark:bg-green-800 disabled:bg-zinc-500 hover:bg-green-600 active:bg-green-600 border-2 border-zinc-950 dark:border-zinc-300 rounded-md text-xl font-bold"
         />
       </form>
-      {loading && <Loading />}
       {showResult && <Result sendSuccess={sendSuccess} />}
       {showCaptcha && (
         <FourPicCaptcha
