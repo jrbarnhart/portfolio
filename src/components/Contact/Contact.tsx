@@ -9,13 +9,19 @@ interface EmailJSResponse {
 
 const Contact = () => {
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
+  const [showLoading, setShowLoading] = useState<boolean>(false);
+  const [showResult, setShowResult] = useState<boolean>(false);
+
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = () => {
+  const onVerify = () => {
     if (!form.current) {
-      console.log("React useRef form not found.");
+      console.error("React useRef<HTMLFormElement> 'form' not found.");
       return;
     }
+
+    setShowCaptcha(false);
+    setShowLoading(true);
 
     emailjs
       .sendForm("service_5yfhcpc", "contact_form", form.current, {
@@ -24,9 +30,11 @@ const Contact = () => {
       .then(
         () => {
           console.log("SUCCESS!");
+          setShowResult(true);
         },
         (error: EmailJSResponse) => {
           console.log("FAILED...", error.text);
+          setShowResult(true);
         }
       );
   };
@@ -103,7 +111,7 @@ const Contact = () => {
         />
       </form>
       {showCaptcha && (
-        <FourPicCaptcha setShowCaptcha={setShowCaptcha} onVerify={sendEmail} />
+        <FourPicCaptcha setShowCaptcha={setShowCaptcha} onVerify={onVerify} />
       )}
     </div>
   );
