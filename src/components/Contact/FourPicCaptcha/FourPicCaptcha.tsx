@@ -23,6 +23,7 @@ const FourPicCaptcha = ({
   const hasShuffled = useRef<boolean>(false);
 
   const [answer, setAnswer] = useState<string>("");
+  const [tries, setTries] = useState<number>(0);
 
   const componentMap: Record<string, React.ReactNode> = {
     cat: <Icons.cat />,
@@ -33,12 +34,6 @@ const FourPicCaptcha = ({
 
   const handleCloseButton = () => {
     setShowCaptcha(false);
-  };
-
-  const handleChoiceButton = (key: string) => {
-    if (key === answer) {
-      onVerify();
-    }
   };
 
   const setRandomAnswer = useCallback(() => {
@@ -58,6 +53,19 @@ const FourPicCaptcha = ({
     hasShuffled.current = true;
   }, [pictures]);
 
+  const handleChoiceButton = (key: string) => {
+    if (key === answer) {
+      onVerify();
+    } else if (tries > 3) {
+      // onReject()
+    } else {
+      setTries((prev) => prev + 1);
+      hasShuffled.current = false;
+      shufflePictures();
+      setRandomAnswer();
+    }
+  };
+
   useEffect(() => {
     shufflePictures();
     setRandomAnswer();
@@ -67,7 +75,13 @@ const FourPicCaptcha = ({
     <div className="fixed z-50 top-0 left-0 grid items-center justify-items-center w-screen h-screen bg-zinc-900 bg-opacity-80">
       <div className="relative grid gap-y-3 w-[300px] bg-zinc-100 dark:bg-zinc-800 rounded-lg p-5 border-2 border-zinc-950">
         <div className="border-b-2 border-zinc-950">
-          <p className="text-xl">Human verification:</p>
+          <p className="text-xl">
+            {tries === 0 ? (
+              "Human verification:"
+            ) : (
+              <span className="text-red-500">Incorrect choice.</span>
+            )}
+          </p>
           <p className="text-3xl font-bold">Select the {answer}</p>
           <button
             onClick={handleCloseButton}
@@ -80,7 +94,7 @@ const FourPicCaptcha = ({
           {pictures.map((name) => {
             return (
               <button
-                className="p-3 bg-zinc-600 border-2 border-green-500 rounded-md"
+                className="p-3 bg-zinc-600 border-2 border-green-500 rounded-md hover:bg-green-900 active:bg-green-900"
                 key={name}
                 onClick={() => {
                   handleChoiceButton(name);
