@@ -10,9 +10,11 @@ import Icons from "./Icons";
 const FourPicCaptcha = ({
   setShowCaptcha,
   onVerify,
+  onReject,
 }: {
   setShowCaptcha: React.Dispatch<SetStateAction<boolean>>;
   onVerify: () => void;
+  onReject: () => void;
 }) => {
   const [pictures, setPictures] = useState<string[]>([
     "cat",
@@ -57,7 +59,7 @@ const FourPicCaptcha = ({
     if (key === answer) {
       onVerify();
     } else if (tries > 3) {
-      // onReject()
+      onReject();
     } else {
       setTries((prev) => prev + 1);
       hasShuffled.current = false;
