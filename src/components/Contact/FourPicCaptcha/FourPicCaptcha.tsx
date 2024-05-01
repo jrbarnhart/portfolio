@@ -56,9 +56,12 @@ const FourPicCaptcha = ({
   }, [pictures]);
 
   const handleChoiceButton = (key: string) => {
+    console.log(tries);
     if (key === answer) {
       onVerify();
-    } else if (tries > 3) {
+    } else if (tries > 1) {
+      // Calls after three incorrect choices
+      // due to how state and rendering works in React
       onReject();
     } else {
       setTries((prev) => prev + 1);
