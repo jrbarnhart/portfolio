@@ -73,7 +73,7 @@ const Contact = () => {
       className="grid justify-items-center gap-y-4 md:gap-y-8 px-5 mb-36"
     >
       <h2 className="col-span-full justify-self-center w-full border-b-2 border-t-2 border-green-500 text-center text-3xl md:text-4xl font-bold">
-        Contact Me (NYI)
+        Contact Me
       </h2>
       <form
         onSubmit={handleSubmit}
