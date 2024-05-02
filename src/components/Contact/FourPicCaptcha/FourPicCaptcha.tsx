@@ -86,7 +86,13 @@ const FourPicCaptcha = ({
               <span className="text-red-500">Incorrect choice.</span>
             )}
           </p>
-          <p className="text-2xl font-bold">Select the {answer}</p>
+          <p className="text-2xl font-bold">
+            Select the{" "}
+            <span className="text-green-500">
+              {answer !== "" ? answer[0].toUpperCase() + answer.slice(1) : ""}
+            </span>
+            .
+          </p>
           <button
             onClick={handleCloseButton}
             className="absolute top-0 right-0 py-5 px-6 font-bold text-xl text-red-500"
@@ -98,7 +104,7 @@ const FourPicCaptcha = ({
           {pictures.map((name) => {
             return (
               <button
-                className="p-3 bg-zinc-600 border-2 border-green-500 rounded-md hover:bg-green-900 active:bg-green-900"
+                className="p-3 bg-zinc-600 border-2 border-green-500 rounded-md hover:bg-green-900"
                 key={name}
                 onClick={() => {
                   handleChoiceButton(name);
