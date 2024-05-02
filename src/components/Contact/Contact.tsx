@@ -53,8 +53,6 @@ const Contact = () => {
           setSendSuccess(false);
         }
       );
-
-    console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   };
 
   const onReject = () => {
