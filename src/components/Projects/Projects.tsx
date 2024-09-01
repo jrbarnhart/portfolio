@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="justify-self-center grid gap-y-3 w-full p-5 mb-12 md:mb-36 rounded-3xl"
+      className="justify-self-center grid gap-y-3 w-full py-5 mb-12 md:mb-36 rounded-3xl"
     >
       <h1 className="col-span-full justify-self-center w-full border-b-2 border-t-2 border-green-500 text-center text-3xl md:text-4xl font-bold">
         Projects

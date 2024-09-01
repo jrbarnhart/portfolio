@@ -1,17 +1,19 @@
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import ContentContainer from "./components/ContentContainer/ContentContainer";
-import Lander from "./components/Lander/Lander";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/About/Skills";
+import TitleCard from "./components/Header/TitleCard";
 
 const Layout = () => {
   return (
     <div className="grid h-[100svh] w-screen">
       <Nav />
       <div id="content" className="overflow-y-auto">
-        <Lander />
+        <ContentContainer>
+          <TitleCard />
+        </ContentContainer>
         <ContentContainer>
           <About />
         </ContentContainer>
