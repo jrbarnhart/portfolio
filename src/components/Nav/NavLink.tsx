@@ -42,7 +42,7 @@ const NavLink = ({
         onClick={(e) => {
           handleClick(e);
         }}
-        className="text-xl md:text-2xl"
+        className="md:text-lg"
       >
         {children}
       </a>

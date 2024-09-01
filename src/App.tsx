@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import DarkmodeContext from "./contexts/DarkmodeContext";
-import MainLayout from "./Layout";
+import Layout from "./Layout";
 
 function App() {
   const [darkmode, setDarkmode] = useState(localStorage.getItem("darkmode"));
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <DarkmodeContext.Provider value={{ darkmode, setDarkmodeState }}>
-      <MainLayout />
+      <Layout />
     </DarkmodeContext.Provider>
   );
 }

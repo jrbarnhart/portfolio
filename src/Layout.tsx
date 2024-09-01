@@ -7,34 +7,28 @@ import Projects from "./components/Projects/Projects";
 import Skills from "./components/About/Skills";
 import Footer from "./components/Footer/Footer";
 
-const MainLayout = () => {
+const Layout = () => {
   return (
-    <div
-      id="content"
-      className="relative grid h-screen w-screen overflow-y-scroll scroll-smooth"
-    >
-      <Lander />
+    <div className="grid h-screen w-screen">
       <Nav />
-
-      <ContentContainer>
-        <About />
-      </ContentContainer>
-
-      <ContentContainer>
-        <Skills />
-      </ContentContainer>
-
-      <ContentContainer>
-        <Projects />
-      </ContentContainer>
-
-      <ContentContainer>
-        <Contact />
-      </ContentContainer>
-
-      <Footer />
+      <div id="content" className="overflow-y-auto">
+        <Lander />
+        <ContentContainer>
+          <About />
+        </ContentContainer>
+        <ContentContainer>
+          <Skills />
+        </ContentContainer>
+        <ContentContainer>
+          <Projects />
+        </ContentContainer>
+        <ContentContainer>
+          <Contact />
+        </ContentContainer>
+        <Footer />
+      </div>
     </div>
   );
 };
 
-export default MainLayout;
+export default Layout;
