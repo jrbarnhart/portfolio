@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div className="grid h-[100svh] w-screen">
       <Nav />
-      <div id="content" className="grid overflow-y-auto">
+      <div id="content" className="grid gap-y-10 overflow-y-auto">
         <ContentContainer>
           <TitleCard />
         </ContentContainer>
