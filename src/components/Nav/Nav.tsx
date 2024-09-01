@@ -12,7 +12,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-12 w-full">
+    <div className="fixed bottom-5 w-full">
       <nav className="mx-4 grid h-20 grid-cols-[1fr_5fr_1fr] items-center text-neutral-50 bg-zinc-600 rounded-full shadow-lg">
         <div className="w-full h-full grid justify-items-center items-center">
           <NavLink targetId="lander" offset={1} contentElement={contentElement}>

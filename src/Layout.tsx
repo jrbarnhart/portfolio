@@ -5,11 +5,10 @@ import Lander from "./components/Lander/Lander";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/About/Skills";
-import Footer from "./components/Footer/Footer";
 
 const Layout = () => {
   return (
-    <div className="grid h-screen w-screen">
+    <div className="grid h-[100svh] w-screen">
       <Nav />
       <div id="content" className="overflow-y-auto">
         <Lander />
@@ -25,7 +24,6 @@ const Layout = () => {
         <ContentContainer>
           <Contact />
         </ContentContainer>
-        <Footer />
       </div>
     </div>
   );
