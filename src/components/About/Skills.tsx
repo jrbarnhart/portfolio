@@ -3,7 +3,7 @@ import SkillTag from "../SkillTag";
 const Skills = () => {
   return (
     <div className="grid gap-y-4">
-      <h3 className="col-span-full w-min text-2xl md:text-3xl font-bold">
+      <h3 className="col-span-full w-full text-3xl md:text-4xl font-bold">
         Skills
       </h3>
       <div className="justify-self-center w-full max-w-[768px] flex flex-wrap gap-2">

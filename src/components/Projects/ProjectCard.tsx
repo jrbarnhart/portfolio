@@ -1,4 +1,3 @@
-import ProjectScreenshot from "./ProjectScreenshot";
 import { ProjectCardProps } from "./types";
 
 const ProjectCard = ({
@@ -11,24 +10,26 @@ const ProjectCard = ({
   alt,
 }: ProjectCardProps) => {
   return (
-    <div className="grid md:grid-cols-2 gap-x-2 md:gap-x-4 gap-y-4 p-3 pb-6 border-b-2 last:border-b-0 border-green-500">
-      <h2 className="col-span-full justify-self-center text-center text-2xl md:text-3xl font-bold">
-        {title}
-      </h2>
-      <ProjectScreenshot
+    <div className="grid grid-rows-[128px_min-content] border border-zinc-300 shadow-sm rounded-md">
+      <img
         src={src}
         alt={alt}
-        demoUrl={demoUrl}
-        codeUrl={codeUrl}
+        className="object-cover size-full rounded-t-md"
       />
-      <div className="justify-self-center md:row-span-2 md:row-start-2 md:self-center">
-        <p className="text-xl md:text-2xl">{description}</p>
-        <div>
-          <div className="flex gap-x-2 flex-wrap font-bold text-lg md:text-xl">
-            {skills.map((skill) => {
-              return <p key={skill}>&#x2022;{skill}</p>;
-            })}
-          </div>
+      <div className="p-1 grid gap-1">
+        <h2 className="font-bold">{title}</h2>
+        <p className="">{description}</p>
+        <div className="flex gap-2 flex-wrap font-bold text-lg md:text-xl">
+          {skills.map((skill, index) => {
+            return (
+              <p
+                className="w-min h-min p-1 px-2 bg-zinc-200 dark:bg-zinc-600 text-black dark:text-white rounded-md text-sm text-nowrap"
+                key={index}
+              >
+                {skill}
+              </p>
+            );
+          })}
         </div>
       </div>
     </div>
