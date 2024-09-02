@@ -1,4 +1,4 @@
-import { ProjectCardProps } from "./types";
+import { ProjectCardProps } from "./ProjectCard";
 
 // Project screenshots
 import memoryCardsScreen from "../../assets/memoryCardsSplashLQ.jpg";
@@ -8,6 +8,7 @@ import cvScreen from "../../assets/cvCreatorSplashLQ.jpg";
 const projectInfo: ProjectCardProps[] = [
   {
     title: "Memory Cards",
+    date: "August, 2023",
     description:
       "Test your memory by selecting unique cards for as long as possible.",
     skills: ["React", "API Fetching", "Javascript"],
@@ -18,6 +19,7 @@ const projectInfo: ProjectCardProps[] = [
   },
   {
     title: "Battle-Mech",
+    date: "July, 2023",
     description:
       "Play a Battleship-styled game against an intelligent AI opponent.",
     skills: ["React", "Jest", "Javascript", "Test Driven Design"],
@@ -28,6 +30,7 @@ const projectInfo: ProjectCardProps[] = [
   },
   {
     title: "CV Creator",
+    date: "August, 2023",
     description:
       "Add your information to a form to have a CV automatically generated for saving or printing.",
     skills: ["React", "React State & Props", "Vite"],

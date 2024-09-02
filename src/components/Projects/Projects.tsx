@@ -11,6 +11,7 @@ const Projects = () => {
       </h1>
       <ProjectCard
         title="Memory Cards"
+        date="August, 2023"
         src="/memoryCardsSplashLQ.jpg"
         alt="Screenshot of Memory Cards application"
         description="Test your memory by selecting unique cards for as long as possible."
