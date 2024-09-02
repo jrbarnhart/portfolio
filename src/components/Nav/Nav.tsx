@@ -13,15 +13,15 @@ const Nav = () => {
 
   return (
     <div className="fixed bottom-5 w-full">
-      <nav className="mx-4 grid h-20 grid-cols-[1fr_5fr_1fr] items-center text-neutral-50 bg-zinc-600 rounded-full shadow-lg">
+      <nav className="mx-4 grid h-20 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
         <div className="w-full h-full grid justify-items-center items-center">
-          <NavLink targetId="lander" offset={1} contentElement={contentElement}>
+          <NavLink targetId="title" offset={50} contentElement={contentElement}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="28px"
               viewBox="0 -960 960 960"
               width="28px"
-              fill="#e8eaed"
+              className="fill-zinc-950 dark:fill-zinc-50"
             >
               <path d="m296-224-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z" />
             </svg>
