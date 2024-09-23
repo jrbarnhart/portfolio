@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <div className="fixed bottom-5 w-full flex justify-center z-20">
-      <nav className="mx-4 w-full max-w-3xl grid h-20 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
+      <nav className="mx-4 w-full max-w-3xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
         <div className="w-full h-full grid justify-items-center items-center">
           <NavLink targetId="title" offset={50} contentElement={contentElement}>
             <svg
@@ -27,11 +27,11 @@ const Nav = () => {
             </svg>
           </NavLink>
         </div>
-        <ul className="md:col-start-2 justify-self-center flex justify-between w-full max-w-[768px] p-5">
+        <ul className="md:col-start-2 justify-self-center flex justify-between w-full max-w-[768px] p-3 gap-1">
           <li>
             <NavLink
               targetId="about"
-              offset={85}
+              offset={20}
               contentElement={contentElement}
             >
               <p>About</p>
@@ -40,7 +40,7 @@ const Nav = () => {
           <li>
             <NavLink
               targetId="projects"
-              offset={75}
+              offset={20}
               contentElement={contentElement}
             >
               <p>Projects</p>
@@ -49,7 +49,7 @@ const Nav = () => {
           <li>
             <NavLink
               targetId="contact"
-              offset={95}
+              offset={20}
               contentElement={contentElement}
             >
               <p>Contact</p>
