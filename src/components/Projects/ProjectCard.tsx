@@ -64,7 +64,7 @@ const ProjectCard = ({
           })}
           <div className="flex gap-3">
             <a
-              className="w-min h-min p-2 px-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-bold flex gap-1"
+              className="w-min h-min p-2 px-4 bg-black dark:bg-white hover:bg-green-500 text-white dark:text-black rounded-lg font-bold flex gap-1"
               href={demoUrl}
             >
               <svg
@@ -79,7 +79,7 @@ const ProjectCard = ({
               Website
             </a>
             <a
-              className="w-min h-min p-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-bold text-nowrap flex gap-1"
+              className="w-min h-min p-2 bg-black dark:bg-white hover:bg-green-500 text-white dark:text-black rounded-lg font-bold text-nowrap flex gap-1"
               href={codeUrl}
             >
               <svg

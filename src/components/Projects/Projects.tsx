@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="justify-self-center grid md:grid-cols-2 gap-y-3 gap-x-2 w-full rounded-3xl"
+      className="justify-self-center grid md:grid-cols-2 gap-y-3 gap-x-2 md:gap-x-5 w-full rounded-3xl"
     >
       <h1 className="col-span-full w-full text-3xl md:text-4xl font-bold">
         Projects
