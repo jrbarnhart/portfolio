@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="justify-self-center grid md:grid-cols-2 gap-y-3 gap-x-2 md:gap-x-5 w-full rounded-3xl"
+      className="justify-self-center grid min-[900px]:grid-cols-2 gap-y-3 gap-x-2 md:gap-x-5 w-full rounded-3xl"
     >
       <h1 className="col-span-full w-full text-3xl md:text-4xl font-bold">
         Projects
@@ -34,9 +34,9 @@ const Projects = () => {
         src="/montyHall.gif"
         thumbSrc="/montyHall.png"
         alt="Gif of an application demonstrating the Monty Hall Problem"
-        description="Simple demo that explains the well-known Monty Hall statistics problem."
+        description="Simple demo that explains the Monty Hall statistics problem."
         skills={["React", "TypeScript", "TailwindCSS"]}
-        demoUrl="https://jrbarnhart.github.io/monty-hall/"
+        demoUrl="https://joshuarbarnhart.com/meal-planner"
         codeUrl="https://github.com/jrbarnhart/monty-hall"
       />
     </div>
