@@ -18,6 +18,7 @@ const Projects = () => {
         description="Plan meals by adding recipes to a calendar. Select from the built-in recipe library or add your own."
         skills={[
           "Remix",
+          "React",
           "TypeScript",
           "TailwindCSS",
           "Nginx",
@@ -26,6 +27,17 @@ const Projects = () => {
         ]}
         demoUrl="https://joshuarbarnhart.com/meal-planner"
         codeUrl="https://github.com/jrbarnhart/meal-planner-fullstack"
+      />
+      <ProjectCard
+        title="Monty Hall Demo"
+        date="June, 2024"
+        src="/montyHall.gif"
+        thumbSrc="/montyHall.png"
+        alt="Gif of an application demonstrating the Monty Hall Problem"
+        description="Simple demo that explains the well-known Monty Hall statistics problem."
+        skills={["React", "TypeScript", "TailwindCSS"]}
+        demoUrl="https://jrbarnhart.github.io/monty-hall/"
+        codeUrl="https://github.com/jrbarnhart/monty-hall"
       />
     </div>
   );
