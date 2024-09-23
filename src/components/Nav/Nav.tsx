@@ -2,18 +2,42 @@ import { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import DarkModeButton from "./DarkModeButton";
 
+const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return windowDimensions;
+};
+
 const Nav = () => {
   const [contentElement, setContentElement] = useState<HTMLElement | null>(
     null
   );
+
+  const windowDimensions = useWindowDimensions();
 
   useEffect(() => {
     setContentElement(document.getElementById("content"));
   }, []);
 
   return (
-    <div className="fixed bottom-5 md:bottom-auto md:top-5 w-full flex justify-center z-20">
-      <nav className="mx-4 w-full max-w-4xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
+    <div className="fixed bottom-5 md:bottom-auto md:top-0 w-full flex justify-center z-20">
+      <nav className="mx-4 w-full max-w-4xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full md:rounded-lg shadow-lg border border-green-500">
         <div className="w-full h-full grid justify-items-center items-center">
           <NavLink
             targetId="title"
@@ -35,7 +59,7 @@ const Nav = () => {
           <li>
             <NavLink
               targetId="about"
-              offset={20}
+              offset={windowDimensions.width >= 768 ? 70 : 20}
               contentElement={contentElement}
             >
               <p>About</p>
@@ -44,7 +68,7 @@ const Nav = () => {
           <li>
             <NavLink
               targetId="projects"
-              offset={20}
+              offset={windowDimensions.width >= 768 ? 70 : 20}
               contentElement={contentElement}
             >
               <p>Projects</p>
@@ -53,7 +77,7 @@ const Nav = () => {
           <li>
             <NavLink
               targetId="contact"
-              offset={20}
+              offset={windowDimensions.width >= 768 ? 70 : 20}
               contentElement={contentElement}
             >
               <p>Contact</p>
