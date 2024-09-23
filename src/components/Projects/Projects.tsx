@@ -10,7 +10,7 @@ const Projects = () => {
         Projects
       </h1>
       <ProjectCard
-        title="Munchlify"
+        title="Munchlify Meal Planner"
         date="July, 2024"
         src="/munchlify.gif"
         thumbSrc="/munchlifyThumb.png"
