@@ -1,9 +1,6 @@
 const Contact = () => {
   return (
-    <div
-      id="contact"
-      className="grid justify-items-center gap-y-4 md:gap-y-8 mb-36"
-    >
+    <div id="contact" className="grid gap-y-4 md:gap-y-8 mb-36">
       <h2 className="col-span-full w-full text-3xl md:text-4xl font-bold">
         Contact Me
       </h2>
