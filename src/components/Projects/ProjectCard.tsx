@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export type ProjectCardProps = {
   title: string;
   date: string;
@@ -7,6 +9,7 @@ export type ProjectCardProps = {
   codeUrl: string;
   src: string;
   alt: string;
+  thumbSrc: string;
 };
 
 const ProjectCard = ({
@@ -17,15 +20,33 @@ const ProjectCard = ({
   demoUrl,
   codeUrl,
   src,
+  thumbSrc,
   alt,
 }: ProjectCardProps) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
   return (
-    <div className="grid grid-rows-[128px_min-content] border border-zinc-300 dark:border-zinc-700 shadow-sm dark:shadow-zinc-700 rounded-md">
-      <img
-        src={src}
-        alt={alt}
-        className="object-cover size-full rounded-t-md"
-      />
+    <div className="grid grid-rows-[min-content_min-content] border border-zinc-300 dark:border-zinc-700 shadow-sm dark:shadow-zinc-700 rounded-md">
+      <div className="relative rounded-t-md w-320 aspect-video">
+        <img
+          src={isHovered ? src : thumbSrc}
+          alt={alt}
+          className="object-cover size-full rounded-t-md"
+          onClick={() => {
+            setIsHovered((prev) => !prev);
+          }}
+        />
+        {isHovered ? null : (
+          <>
+            <p className="hidden md:block absolute bottom-0 right-0 text-neutral-50 bg-zinc-800 bg-opacity-80 px-1 m-1 rounded-sm">
+              Click to Play
+            </p>
+            <p className="md:hidden absolute bottom-0 right-0 text-neutral-50 bg-zinc-800 bg-opacity-80 px-1 m-1 rounded-sm">
+              Tap to Play
+            </p>
+          </>
+        )}
+      </div>
       <div className="p-1 grid gap-1">
         <h2 className="font-bold">{title}</h2>
         <p className="text-sm">{date}</p>
