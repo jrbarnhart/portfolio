@@ -47,7 +47,7 @@ const ProjectCard = ({
           </>
         )}
       </div>
-      <div className="p-1 grid">
+      <div className="p-1 md:p-2 grid">
         <h2 className="font-bold">{title}</h2>
         <p className="text-sm">{date}</p>
         <p className="pb-2">{description}</p>
