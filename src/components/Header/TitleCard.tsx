@@ -1,6 +1,6 @@
 const TitleCard = () => {
   return (
-    <div id="title" className="mt-8 flex gap-x-1">
+    <div id="title" className="mt-8 md:mt-32 flex gap-x-1">
       <div>
         <p className="self-end text-4xl text-green-500">Hello world!</p>
         <p className="row-start-2 text-2xl md:text-3xl lg:text-4xl">

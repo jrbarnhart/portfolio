@@ -12,10 +12,14 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-5 w-full flex justify-center z-20">
-      <nav className="mx-4 w-full max-w-3xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
+    <div className="fixed bottom-5 md:bottom-auto md:top-5 w-full flex justify-center z-20">
+      <nav className="mx-4 w-full max-w-4xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full shadow-lg border border-green-500">
         <div className="w-full h-full grid justify-items-center items-center">
-          <NavLink targetId="title" offset={50} contentElement={contentElement}>
+          <NavLink
+            targetId="title"
+            offset={150}
+            contentElement={contentElement}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="28px"
@@ -27,7 +31,7 @@ const Nav = () => {
             </svg>
           </NavLink>
         </div>
-        <ul className="md:col-start-2 justify-self-center flex justify-between w-full max-w-[768px] p-3 gap-1">
+        <ul className="md:col-start-2 justify-self-center flex justify-between w-full max-w-xl p-3 gap-1">
           <li>
             <NavLink
               targetId="about"
