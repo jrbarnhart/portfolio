@@ -27,24 +27,6 @@ const Projects = () => {
         demoUrl="https://joshuarbarnhart.com/meal-planner"
         codeUrl="https://github.com/jrbarnhart/meal-planner-fullstack"
       />
-      <ProjectCard
-        title="Munchlify"
-        date="July, 2024"
-        src="/munchlify.gif"
-        thumbSrc="/munchlifyThumb.png"
-        alt="Gif of meal planner application"
-        description="Plan meals by adding recipes to a calendar. Select from the built-in recipe library or add your own."
-        skills={[
-          "Remix",
-          "TypeScript",
-          "TailwindCSS",
-          "Nginx",
-          "VPS Deployment",
-          "Domain Managment",
-        ]}
-        demoUrl="https://joshuarbarnhart.com/meal-planner"
-        codeUrl="https://github.com/jrbarnhart/meal-planner-fullstack"
-      />
     </div>
   );
 };
