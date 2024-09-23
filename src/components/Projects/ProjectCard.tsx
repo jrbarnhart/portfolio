@@ -26,7 +26,7 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <div className="grid grid-rows-[min-content_min-content] border border-zinc-300 dark:border-zinc-700 shadow-sm dark:shadow-zinc-700 rounded-md">
+    <div className="grid grid-rows-[min-content_min-content] border border-zinc-300 dark:border-zinc-700 shadow-sm dark:shadow-zinc-700 rounded-md z-10">
       <div className="relative rounded-t-md w-320 aspect-video">
         <img
           src={isHovered ? src : thumbSrc}
