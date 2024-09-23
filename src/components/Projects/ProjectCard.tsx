@@ -26,7 +26,7 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
-    <div className="grid grid-rows-[min-content_min-content] border border-zinc-300 dark:border-zinc-600 shadow-sm dark:shadow-zinc-950 rounded-md z-10">
+    <div className="grid grid-rows-[min-content_min-content] md:grid-rows-2 border border-zinc-300 dark:border-zinc-600 shadow-sm dark:shadow-zinc-950 rounded-md z-10">
       <div className="relative rounded-t-md w-320 aspect-video">
         <img
           src={isHovered ? src : thumbSrc}
@@ -47,10 +47,10 @@ const ProjectCard = ({
           </>
         )}
       </div>
-      <div className="p-1 md:p-2 grid">
+      <div className="h-full p-1 md:p-2 flex flex-col">
         <h2 className="font-bold">{title}</h2>
         <p className="text-sm">{date}</p>
-        <p className="pb-2">{description}</p>
+        <p className="pb-2 flex-grow">{description}</p>
         <div className="flex gap-2 flex-wrap font-bold text-lg md:text-xl">
           {skills.map((skill, index) => {
             return (
