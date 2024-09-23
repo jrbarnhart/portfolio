@@ -37,7 +37,7 @@ const Nav = () => {
 
   return (
     <div className="fixed bottom-5 lg:bottom-auto lg:top-0 w-full flex justify-center z-20">
-      <nav className="mx-4 w-full max-w-4xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full lg:rounded-lg shadow-lg border border-green-500">
+      <nav className="mx-4 w-full max-w-4xl grid h-16 grid-cols-[1fr_5fr_1fr] items-center text-neutral-950 dark:text-zinc-50 bg-zinc-200 dark:bg-zinc-800 rounded-full lg:rounded-lg lg:rounded-t-none shadow-lg border border-green-500 lg:border-t-0">
         <div className="w-full h-full grid justify-items-center items-center">
           <NavLink
             targetId="title"
