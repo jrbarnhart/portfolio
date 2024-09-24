@@ -3,9 +3,7 @@ import SkillTag from "../SkillTag";
 const Skills = () => {
   return (
     <div className="grid gap-y-4">
-      <h3 className="col-span-full w-full text-3xl md:text-4xl font-bold">
-        Skills
-      </h3>
+      <h3 className="col-span-full w-full text-3xl font-bold">Skills</h3>
       <div className="justify-self-center w-full flex flex-wrap gap-2">
         <SkillTag
           link="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
