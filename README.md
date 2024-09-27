@@ -4,7 +4,7 @@ This is my personal portfolio project built using Vite, React, and Tailwind CSS.
 
 ## Description
 
-This project serves as a showcase of my skills, experiences, and projects. It's standout feature will be an interactive banner that features particles on an HTML canvas element.
+This project serves as a showcase of my skills, experience, and projects.
 
 ## Technologies Used
 
@@ -13,6 +13,8 @@ This project serves as a showcase of my skills, experiences, and projects. It's 
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for quickly building custom designs.
 
 ## Setup Instructions
+
+If you want to run this project locally:
 
 1. Clone the repository:
 
