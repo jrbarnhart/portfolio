@@ -7,7 +7,9 @@ const TitleCard = () => {
           {"My name's Joshua. This is my full-stack portfolio."}
         </p>
       </div>
-      <div className="size-28 bg-green-500 rounded-full flex-shrink-0"></div>
+      <div className="size-28 lg:size-36 bg-green-500 border-green-500 border-2 rounded-full flex-shrink-0">
+        <img src="/me.png" alt="Image of Joshua Barnhart" />
+      </div>
     </div>
   );
 };
