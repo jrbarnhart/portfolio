@@ -32,7 +32,7 @@ const Projects = () => {
         src="/montyHall.gif"
         thumbSrc="/montyHall.png"
         alt="Gif of an application demonstrating the Monty Hall Problem"
-        description="Simple demo that explains the Monty Hall statistics problem."
+        description="Simple demo that explains the Monty Hall probability scenario."
         skills={["React", "TypeScript", "TailwindCSS"]}
         demoUrl="https://jrbarnhart.github.io/monty-hall/"
         codeUrl="https://github.com/jrbarnhart/monty-hall"
