@@ -27,6 +27,17 @@ const Projects = () => {
         codeUrl="https://github.com/jrbarnhart/meal-planner-fullstack"
       />
       <ProjectCard
+        title="Conway's Game of Life"
+        date="March, 2024"
+        src="/gameOfLife.gif"
+        thumbSrc="/gameOfLife.png"
+        alt="Gif of Conway's Game of Life cellular automata"
+        description="Simulate cellular life forms in John Conway's Game of Life. Use a random initial state or draw your own."
+        skills={["TypeScript", "React", "Vite", "Tailwind", "Vitest"]}
+        demoUrl="https://conway-life-simulation.netlify.app/"
+        codeUrl="https://github.com/jrbarnhart/game-of-life"
+      />
+      <ProjectCard
         title="Monty Hall Demo"
         date="June, 2024"
         src="/montyHall.gif"
