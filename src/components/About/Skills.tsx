@@ -29,6 +29,12 @@ const Skills = () => {
           link="https://nextjs.org/"
           bgLight={true}
         />
+        <SkillTag skillName="Jest" link="https://jestjs.io/" />
+        <SkillTag skillName="Vitest" link="https://vitest.dev/" />
+        <SkillTag
+          skillName="Testing Library"
+          link="https://testing-library.com/"
+        />
         <SkillTag skillName="Prisma" link="https://www.prisma.io/" />
         <SkillTag skillName="PostgreSQL" link="https://www.postgresql.org/" />
         <SkillTag skillName="MongoDB" link="https://www.mongodb.com/" />
