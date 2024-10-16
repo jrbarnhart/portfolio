@@ -51,6 +51,8 @@ const Projects = () => {
           "Tailwind",
           "PostgreSQL",
           "Prisma",
+          "OAuth",
+          "Auth.js",
         ]}
         demoUrl=""
         codeUrl="https://github.com/jrbarnhart/key-word-kingdom"
