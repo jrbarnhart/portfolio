@@ -38,6 +38,24 @@ const Projects = () => {
         codeUrl="https://github.com/jrbarnhart/game-of-life"
       />
       <ProjectCard
+        title="Key Word Kingdom (In Progress)"
+        date="In Progress"
+        src="/keyWordKingdomWIP.png"
+        thumbSrc="/keyWordKingdom.png"
+        alt="Gif of Key Word Kingdom word guessing game"
+        description="Try to find the Key Word by guessing words from a limited character set. Progress through levels or set your own difficulty with Custom mode."
+        skills={[
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind",
+          "PostgreSQL",
+          "Prisma",
+        ]}
+        demoUrl=""
+        codeUrl="https://github.com/jrbarnhart/key-word-kingdom"
+      />
+      <ProjectCard
         title="Monty Hall Demo"
         date="June, 2024"
         src="/montyHall.gif"
