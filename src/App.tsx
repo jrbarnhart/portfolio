@@ -16,14 +16,16 @@ function App() {
       id="app-container"
       className={`${
         isDarkmode ? "dark " : ""
-      }h-screen w-screen dark:bg-black dark:text-white`}
+      }h-screen w-screen overflow-hidden dark:bg-black dark:text-white`}
     >
-      <Hero isDarkmode={isDarkmode} setIsDarkmode={setIsDarkmode} />
-      <About />
-      <Skills />
-      <FeaturedProjects />
-      <MoreProjects />
-      <Contact />
+      <div id="scroll-container" className="h-full overflow-auto">
+        <Hero isDarkmode={isDarkmode} setIsDarkmode={setIsDarkmode} />
+        <About />
+        <Skills />
+        <FeaturedProjects />
+        <MoreProjects />
+        <Contact />
+      </div>
     </div>
   );
 }
