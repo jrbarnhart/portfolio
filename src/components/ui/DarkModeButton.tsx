@@ -2,23 +2,17 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { SetStateAction } from "react";
 import { twMerge } from "tailwind-merge";
 
-type DarkModeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type DarkModeButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "type" | "onClick"
+> & {
   isDarkmode: boolean;
   setIsDarkmode: React.Dispatch<SetStateAction<boolean>>;
 };
 
 export default function DarkmodeButton({ ...props }: DarkModeButtonProps) {
   const { isDarkmode, setIsDarkmode } = props;
-  const {
-    children,
-    className,
-    // Private props destructured to prevent override
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    type: _type,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onClick: _onClick,
-    ...rest
-  } = props;
+  const { children, className, ...rest } = props;
   return (
     <button
       type="button"
