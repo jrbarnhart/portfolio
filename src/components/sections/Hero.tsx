@@ -1,5 +1,5 @@
 import { SetStateAction } from "react";
-import DarkmodeButton from "./ui/DarkModeButton";
+import DarkmodeButton from "../ui/DarkModeButton";
 
 type HeroPropTypes = {
   isDarkmode: boolean;

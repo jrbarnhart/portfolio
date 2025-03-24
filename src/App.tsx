@@ -1,9 +1,9 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import FeaturedProjects from "./components/FeaturedProjects";
-import Hero from "./components/Hero";
-import MoreProjects from "./components/MoreProjects";
-import Skills from "./components/Skills";
+import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
+import FeaturedProjects from "./components/sections/FeaturedProjects";
+import Hero from "./components/sections/Hero";
+import MoreProjects from "./components/sections/MoreProjects";
+import Skills from "./components/sections/Skills";
 import useDarkmode from "./hooks/useDarkmode";
 
 function App() {
