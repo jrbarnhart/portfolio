@@ -20,7 +20,7 @@ export default function DarkmodeButton({ ...props }: DarkModeButtonProps) {
         setIsDarkmode((prev) => !prev);
       }}
       className={twMerge(
-        "px-4 py-2 bg-indigo-700 text-white rounded-sm w-16 flex justify-center",
+        "h-14 w-14 bg-indigo-600 hover:bg-indigo-700 text-white rounded-sm cursor-pointer flex justify-center items-center transition-all ease-in",
         className
       )}
       {...rest}
