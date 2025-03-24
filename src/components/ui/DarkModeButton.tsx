@@ -6,18 +6,17 @@ type DarkModeButtonProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "type" | "onClick"
 > & {
-  isDarkmode: boolean;
-  setIsDarkmode: React.Dispatch<SetStateAction<boolean>>;
+  darkmode: boolean;
+  setDarkmode: React.Dispatch<SetStateAction<boolean>>;
 };
 
 export default function DarkmodeButton({ ...props }: DarkModeButtonProps) {
-  const { isDarkmode, setIsDarkmode } = props;
-  const { children, className, ...rest } = props;
+  const { children, className, darkmode, setDarkmode, ...rest } = props;
   return (
     <button
       type="button"
       onClick={() => {
-        setIsDarkmode((prev) => !prev);
+        setDarkmode((prev) => !prev);
       }}
       className={twMerge(
         "h-14 w-14 bg-indigo-600 hover:bg-indigo-700 text-white rounded-sm cursor-pointer flex justify-center items-center transition-all ease-in",
@@ -25,7 +24,7 @@ export default function DarkmodeButton({ ...props }: DarkModeButtonProps) {
       )}
       {...rest}
     >
-      {isDarkmode ? (
+      {darkmode ? (
         <SunIcon className="h-6 w-6" />
       ) : (
         <MoonIcon className="h-6 w-6" />
