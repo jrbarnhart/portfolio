@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import useDarkmode from "./hooks/useDarkmode";
 
 function App() {
-  const { isDarkmode, DarkmodeButton } = useDarkmode();
+  const { isDarkmode, setIsDarkmode } = useDarkmode();
 
   return (
     <div
@@ -16,8 +16,7 @@ function App() {
         isDarkmode ? "dark " : ""
       }h-screen w-screen dark:bg-black dark:text-white`}
     >
-      <DarkmodeButton />
-      <Hero />
+      <Hero isDarkmode={isDarkmode} setIsDarkmode={setIsDarkmode} />
       <About />
       <Skills />
       <FeaturedProjects />
