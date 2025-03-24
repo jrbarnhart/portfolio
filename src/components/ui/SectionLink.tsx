@@ -2,11 +2,14 @@ type SectionName =
   | "Hero"
   | "About"
   | "Contact"
-  | "Featured Projects"
+  | "Projects"
   | "More Projects"
   | "Skills";
 
-type SectionLinkProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type SectionLinkProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "onClick" | "type"
+> & {
   section: SectionName;
 };
 
