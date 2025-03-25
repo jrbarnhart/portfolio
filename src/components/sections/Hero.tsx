@@ -25,7 +25,8 @@ export default function Hero({ ...props }: HeroProps) {
         </h1>
         <h2 className="[text-shadow:_1px_1px_5px_var(--tw-shadow-color)] shadow-indigo-500/50 dark:shadow-indigo-950 text-2xl md:text-4xl font-semibold px-8 row-start-3 col-span-full">
           From APIs to front-end interfaces and custom tools, I create fast,
-          practical solutions using TypeScript, React, and modern tooling.
+          practical solutions using TypeScript, React, and modern tooling like
+          Vite.
         </h2>
         <nav className="px-8 py-10 row-start-4 col-span-full flex gap-10">
           <SectionLink section="Projects" />
