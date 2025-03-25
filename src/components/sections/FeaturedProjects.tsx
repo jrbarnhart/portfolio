@@ -16,6 +16,7 @@ export default function FeaturedProjects() {
       description: "A front-end interface to interact with the Brighter API.",
       tech: ["React", "Vite", "TypeScript"],
       link: "#",
+      isFeatured: false,
     },
     {
       title: "Brighter Map",
@@ -23,6 +24,7 @@ export default function FeaturedProjects() {
         "An interactive map for Brighter Shores with filtering and search.",
       tech: ["React", "R3F", "TypeScript"],
       link: "#",
+      isFeatured: false,
     },
     {
       title: "Game of Life",
@@ -30,6 +32,7 @@ export default function FeaturedProjects() {
         "A creative, interactive implementation of Conway's Game of Life.",
       tech: ["React", "Canvas", "Algorithms"],
       link: "#",
+      isFeatured: false,
     },
   ];
 
@@ -69,35 +72,38 @@ export default function FeaturedProjects() {
 
         {/* Grid for Remaining Projects */}
         <div className="grid gap-4 md:grid-cols-3">
-          {projects.slice(1).map((project, index) => (
-            <div
-              key={index}
-              className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 grid gap-3 content-start"
-            >
-              <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
-                {project.title}
-              </h3>
-              <p className="text-sm md:text-base opacity-80">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="text-xs font-semibold px-3 py-1 bg-white/30 dark:bg-white/10 rounded-full shadow-sm shadow-slate-500/50 dark:shadow-indigo-950"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={project.link}
-                className="mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition"
+          {projects.map((project, index) => {
+            if (project.isFeatured) return null;
+            return (
+              <div
+                key={index}
+                className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 grid gap-3 content-start"
               >
-                View Project
-              </a>
-            </div>
-          ))}
+                <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
+                  {project.title}
+                </h3>
+                <p className="text-sm md:text-base opacity-80">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs font-semibold px-3 py-1 bg-white/30 dark:bg-white/10 rounded-full shadow-sm shadow-slate-500/50 dark:shadow-indigo-950"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.link}
+                  className="mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition"
+                >
+                  View Project
+                </a>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
