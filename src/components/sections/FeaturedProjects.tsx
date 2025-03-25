@@ -1,6 +1,33 @@
 // This rule is not needed here as elements are not inserted/removed so index as key bugs shouldn't happen
 /* eslint-disable react-x/no-array-index-key */
 
+import { GlobeIcon } from "@radix-ui/react-icons";
+import GithubIcon from "../ui/GithubIcon";
+
+const DemoButton = () => {
+  return (
+    <button
+      type="button"
+      className="grow max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center"
+    >
+      <span className="">View Project</span>
+      <GlobeIcon className="h-6 w-6" />
+    </button>
+  );
+};
+
+const CodeButton = () => {
+  return (
+    <button
+      type="button"
+      className="grow max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center"
+    >
+      <span className="">View Code</span>{" "}
+      <GithubIcon className="dark:fill-white" />
+    </button>
+  );
+};
+
 export default function FeaturedProjects() {
   const projects = [
     {
@@ -62,12 +89,10 @@ export default function FeaturedProjects() {
               </span>
             ))}
           </div>
-          <a
-            href={projects[0].link}
-            className="mt-2 px-4 py-2 text-md font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition"
-          >
-            View Project
-          </a>
+          <div className="flex gap-4">
+            <DemoButton />
+            <CodeButton />
+          </div>
         </div>
 
         {/* Grid for Remaining Projects */}
@@ -95,12 +120,10 @@ export default function FeaturedProjects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  className="mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition"
-                >
-                  View Project
-                </a>
+                <div className="flex justify-between gap-4">
+                  <DemoButton />
+                  <CodeButton />
+                </div>
               </div>
             );
           })}
