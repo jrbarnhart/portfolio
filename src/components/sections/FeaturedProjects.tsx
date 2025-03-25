@@ -3,6 +3,7 @@
 
 import { GlobeIcon } from "@radix-ui/react-icons";
 import GithubIcon from "../ui/GithubIcon";
+import gameOfLifeUrl from "../../assets/gameOfLife.png";
 
 const DemoButton = () => {
   return (
@@ -28,8 +29,17 @@ const CodeButton = () => {
   );
 };
 
+type FeaturedProject = {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+  isFeatured: boolean;
+  imageUrl: string | null;
+};
+
 export default function FeaturedProjects() {
-  const projects = [
+  const projects: FeaturedProject[] = [
     {
       title: "Brighter API",
       description:
@@ -37,6 +47,7 @@ export default function FeaturedProjects() {
       tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma"],
       link: "#",
       isFeatured: true,
+      imageUrl: null,
     },
     {
       title: "Brighter API Interface",
@@ -44,6 +55,7 @@ export default function FeaturedProjects() {
       tech: ["React", "Vite", "TypeScript"],
       link: "#",
       isFeatured: false,
+      imageUrl: null,
     },
     {
       title: "Brighter Map",
@@ -52,6 +64,7 @@ export default function FeaturedProjects() {
       tech: ["React", "R3F", "TypeScript"],
       link: "#",
       isFeatured: false,
+      imageUrl: null,
     },
     {
       title: "Game of Life",
@@ -60,6 +73,7 @@ export default function FeaturedProjects() {
       tech: ["React", "Canvas", "Algorithms"],
       link: "#",
       isFeatured: false,
+      imageUrl: gameOfLifeUrl,
     },
   ];
 
