@@ -27,7 +27,7 @@ export default function SectionLink({ ...props }: SectionLinkProps) {
       type="button"
       onClick={handleClick}
       className={twMerge(
-        "text-lg md:text-2xl font-bold h-12 md:h-16 w-32 md:w-40 rounded-md text-violet-50 bg-violet-600 hover:bg-violet-800 cursor-pointer transition-all ease-in",
+        "text-lg md:text-2xl font-bold h-12 md:h-16 w-32 md:w-40 rounded-md text-violet-50 bg-violet-600 hover:bg-violet-800 hover:scale-95 cursor-pointer transition-all ease-in",
         className
       )}
       {...rest}
