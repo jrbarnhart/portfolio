@@ -28,17 +28,12 @@ export default function Background({
           scale={6}
           color={darkmode ? "#e6ff03" : "#ff9900"}
         />
-        <Sparkles
-          size={1}
-          speed={0.01}
-          scale={6}
-          color={darkmode ? "#e85151" : "#f27e7e"}
-        />
+        <Sparkles size={1} speed={0.01} scale={6} color={"#f27e7e"} />
         <Stars
           radius={100}
           depth={50}
-          count={7000} // Increase count for a denser sky
-          factor={5} // Larger factor for depth variation
+          count={4000} // Increase count for a denser sky
+          factor={3} // Larger factor for depth variation
           saturation={0.2} // Slight saturation for vibrance
           fade
           speed={0.5} // Slower for a dreamy effect
@@ -46,8 +41,8 @@ export default function Background({
         <Clouds material={THREE.MeshBasicMaterial}>
           <Cloud
             segments={50}
-            bounds={[10, 4, 2]}
-            volume={4}
+            bounds={[10, 3, 2]}
+            volume={5}
             color={darkmode ? "#482c94" : "#7d45d1"}
             opacity={0.3}
           />
