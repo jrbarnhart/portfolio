@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 export default function useDarkmode() {
-  const [darkmode, setDarkmode] = useState(
-    window.matchMedia("(prefers-color-scheme: light)").matches ? false : true
-  );
+  const [darkmode, setDarkmode] = useState(true);
 
   return { darkmode, setDarkmode };
 }
