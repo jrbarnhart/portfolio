@@ -18,9 +18,21 @@ export default function Background({
       >
         <Sparkles
           size={2}
-          speed={0.1}
+          speed={0.03}
           scale={10}
           color={darkmode ? "#663bf5" : "#ba85ff"}
+        />
+        <Sparkles
+          size={1}
+          speed={0.03}
+          scale={6}
+          color={darkmode ? "#e6ff03" : "#ff9900"}
+        />
+        <Sparkles
+          size={1}
+          speed={0.01}
+          scale={6}
+          color={darkmode ? "#e85151" : "#f27e7e"}
         />
         <Stars
           radius={100}
@@ -34,10 +46,10 @@ export default function Background({
         <Clouds material={THREE.MeshBasicMaterial}>
           <Cloud
             segments={50}
-            bounds={[10, 2, 2]}
+            bounds={[10, 4, 2]}
             volume={4}
             color={darkmode ? "#482c94" : "#7d45d1"}
-            opacity={0.5}
+            opacity={0.3}
           />
           <Cloud seed={1} scale={1} volume={2} color="#ff69b4" fade={70} />
         </Clouds>
