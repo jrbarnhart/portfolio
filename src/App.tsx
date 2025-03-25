@@ -25,7 +25,7 @@ function App() {
       />
       <div
         id="scroll-container"
-        className="h-full overflow-auto row-start-1 col-span-full"
+        className="h-full overflow-auto row-start-1 col-span-full z-10"
       >
         <Hero isDarkmode={darkmode} setIsDarkmode={setDarkmode} />
         <About />
