@@ -17,9 +17,12 @@ function App() {
       id="app-container"
       className={`${
         darkmode ? "dark " : ""
-      }h-screen w-screen overflow-hidden bg-transparent dark:text-white grid`}
+      }h-[100svh] w-[100svw] overflow-hidden bg-transparent dark:text-white grid`}
     >
-      <Background className="row-start-1 col-span-full -z-10" />
+      <Background
+        className="row-start-1 col-span-full -z-10"
+        darkmode={darkmode}
+      />
       <div
         id="scroll-container"
         className="h-full overflow-auto row-start-1 col-span-full"
