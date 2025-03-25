@@ -1,3 +1,4 @@
+import Background from "./components/background/Background";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import FeaturedProjects from "./components/sections/FeaturedProjects";
@@ -16,9 +17,13 @@ function App() {
       id="app-container"
       className={`${
         darkmode ? "dark " : ""
-      }h-screen w-screen overflow-hidden dark:bg-black dark:text-white`}
+      }h-screen w-screen overflow-hidden bg-transparent dark:text-white grid`}
     >
-      <div id="scroll-container" className="h-full overflow-auto">
+      <Background className="row-start-1 col-span-full -z-10" />
+      <div
+        id="scroll-container"
+        className="h-full overflow-auto row-start-1 col-span-full"
+      >
         <Hero isDarkmode={darkmode} setIsDarkmode={setDarkmode} />
         <About />
         <Skills />
