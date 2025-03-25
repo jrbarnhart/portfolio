@@ -10,6 +10,7 @@ export default function Background({
   return (
     <>
       <div className="bg-black absolute h-[100svh] w-[100svw] animate-fade-out pointer-events-none"></div>
+      <div className="h-[100svh] w-[100svw] absolute bg-radial from-violet-500/40 via-transparent to-transparent"></div>
       <Canvas
         className={twMerge("dark:bg-black", className)}
         camera={{ position: [0, 0, 5] }}
