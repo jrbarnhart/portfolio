@@ -21,18 +21,32 @@ export default function Skills() {
   ];
 
   return (
-    <section className="text-slate-950 dark:text-violet-50 px-6 mx-2 py-4 w-full max-w-6xl justify-self-center bg-black/10 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg">
-      <h2 className="[text-shadow:_2px_2px_5px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-3xl md:text-5xl font-semibold">
-        Skills
-      </h2>
-      {skillData.map((data, index) => (
-        <div key={index}>
-          <h2>{data.title}</h2>
-          {data.skills.map((skill, index) => (
-            <span key={index}>{skill}</span>
-          ))}
-        </div>
-      ))}
-    </section>
+    <div className="px-2">
+      <section className="text-slate-950 dark:text-violet-50 px-6 py-4 w-full max-w-6xl justify-self-center bg-black/5 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-4 md:grid-cols-2">
+        <h2 className="[text-shadow:_2px_2px_5px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-3xl md:text-5xl font-semibold col-span-full">
+          Skills
+        </h2>
+        {skillData.map((data, index) => (
+          <div
+            className="px-4 py-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/20 grid gap-4"
+            key={index}
+          >
+            <h2 className="col-span-full [text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl">
+              {data.title}
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {data.skills.map((skill, index) => (
+                <span
+                  className="[text-shadow:_1px_1px_3px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-sm font-semibold min-w-20 p-3 bg-white/10 rounded-full flex items-center justify-center transition-all hover:bg-white/30 hover:scale-105"
+                  key={index}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 }
