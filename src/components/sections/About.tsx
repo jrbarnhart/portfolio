@@ -3,7 +3,9 @@ import imgUrl from "../../assets/me.png";
 export default function About() {
   return (
     <section className="text-slate-950 dark:text-violet-50 px-6 mx-2 py-4 max-w-6xl justify-self-center bg-black/10 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-2 md:grid-cols-[2fr_1fr] md:grid-rows-[repeat(3,min-content)]">
-      <h2 className="text-3xl md:text-5xl font-semibold">About Me</h2>
+      <h2 className="[text-shadow:_2px_2px_5px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-3xl md:text-5xl font-semibold">
+        About Me
+      </h2>
       <p className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 mt-4 text-xl md:text-2xl">
         I’m a self-taught developer who enjoys solving real-world problems with
         modern web tech. I have a genuine love for learning and am always
