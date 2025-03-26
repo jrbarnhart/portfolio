@@ -12,7 +12,7 @@ const DemoButton = () => {
   return (
     <button
       type="button"
-      className="grow max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+      className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span className="">View Project</span>
       <GlobeIcon className="h-6 w-6" />
@@ -24,7 +24,7 @@ const CodeButton = () => {
   return (
     <button
       type="button"
-      className="grow max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+      className="grow md:max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span className="">View Code</span>{" "}
       <GithubIcon className="dark:fill-white" />
@@ -128,7 +128,7 @@ export default function FeaturedProjects() {
             return (
               <div
                 key={index}
-                className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 grid gap-3 content-start"
+                className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 flex flex-col gap-3 content-start"
               >
                 <div className="overflow-hidden rounded-2xl">
                   <img
@@ -140,7 +140,7 @@ export default function FeaturedProjects() {
                 <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
                   {project.title}
                 </h3>
-                <p className="text-sm md:text-base opacity-80">
+                <p className="grow text-sm md:text-base opacity-80">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -153,7 +153,7 @@ export default function FeaturedProjects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between gap-4">
+                <div className="flex gap-4">
                   <DemoButton />
                   <CodeButton />
                 </div>
