@@ -8,18 +8,29 @@ type SectionName =
   | "More Projects"
   | "Skills";
 
+type SectionId =
+  | "hero"
+  | "about"
+  | "contact"
+  | "featured-projects"
+  | "more-projects"
+  | "skills";
+
 type SectionLinkProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "onClick" | "type"
 > & {
   section: SectionName;
+  sectionId: SectionId;
 };
 
 export default function SectionLink({ ...props }: SectionLinkProps) {
-  const { section, className, ...rest } = props;
+  const { section, sectionId, className, ...rest } = props;
   const handleClick = () => {
-    // Jump to section
-    return true;
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (

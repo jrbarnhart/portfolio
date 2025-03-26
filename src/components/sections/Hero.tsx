@@ -32,8 +32,8 @@ export default function Hero({ ...props }: HeroProps) {
           Vite.
         </h2>
         <nav className="px-8 py-10 row-start-4 col-span-full flex gap-10">
-          <SectionLink section="Projects" />
-          <SectionLink section="Contact" />
+          <SectionLink section="Projects" sectionId="featured-projects" />
+          <SectionLink section="Contact" sectionId="contact" />
         </nav>
       </div>
     </section>
