@@ -4,7 +4,10 @@ import LinkedInIcon from "../ui/LinkedInIcon";
 export default function Contact() {
   return (
     <div className="px-2 w-full justify-self-center flex flex-col items-center">
-      <section className="text-slate-950 dark:text-violet-50 px-3 md:px-6 mx-2 mb-64 py-4 w-full max-w-6xl justify-self-center bg-white/20 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-6">
+      <section
+        id="contact"
+        className="text-slate-950 dark:text-violet-50 px-3 md:px-6 mx-2 mb-64 py-4 w-full max-w-6xl justify-self-center bg-white/20 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-6"
+      >
         <h2 className="[text-shadow:_2px_2px_5px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-3xl md:text-5xl font-semibold">
           Let’s Connect
         </h2>

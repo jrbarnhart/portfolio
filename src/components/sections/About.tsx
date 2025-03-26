@@ -2,7 +2,10 @@ import imgUrl from "../../assets/me.png";
 
 export default function About() {
   return (
-    <section className="text-slate-950 dark:text-violet-50 px-3 md:px-6 mx-2 py-4 max-w-6xl justify-self-center bg-white/20 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-2 md:grid-cols-[2fr_1fr] md:grid-rows-[repeat(3,min-content)]">
+    <section
+      id="about"
+      className="text-slate-950 dark:text-violet-50 px-3 md:px-6 mx-2 py-4 max-w-6xl justify-self-center bg-white/20 dark:bg-white/10 backdrop-blur-lg backdrop-saturate-150 rounded-2xl shadow-lg grid gap-2 md:grid-cols-[2fr_1fr] md:grid-rows-[repeat(3,min-content)]"
+    >
       <h2 className="[text-shadow:_2px_2px_5px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-3xl md:text-5xl font-semibold">
         About Me
       </h2>

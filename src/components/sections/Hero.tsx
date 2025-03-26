@@ -10,7 +10,10 @@ type HeroProps = {
 export default function Hero({ ...props }: HeroProps) {
   const { isDarkmode, setIsDarkmode } = props;
   return (
-    <section className="h-screen grid text-blue-950 dark:text-violet-50">
+    <section
+      id="hero"
+      className="h-screen grid text-blue-950 dark:text-violet-50"
+    >
       <DarkmodeButton
         darkmode={isDarkmode}
         setDarkmode={setIsDarkmode}
