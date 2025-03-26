@@ -108,7 +108,7 @@ export default function FeaturedProjects() {
         </h2>
 
         {/* Featured Project (Brighter API) */}
-        <div className="p-6 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 grid md:grid-cols-2 gap-4 content-start">
+        <div className="p-6 bg-black/5 dark:bg-white/10 shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 grid md:grid-cols-2 gap-4 content-start">
           <div className="overflow-hidden rounded-2xl md:col-start-2 md:row-span-full">
             <img
               src={projects[0].imageUrl ?? ""}
@@ -147,7 +147,7 @@ export default function FeaturedProjects() {
             return (
               <div
                 key={index}
-                className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 flex flex-col gap-3 content-start"
+                className="p-4 bg-black/5 dark:bg-white/10 shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 flex flex-col gap-3 content-start"
               >
                 <div className="overflow-hidden rounded-2xl">
                   <img

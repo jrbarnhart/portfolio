@@ -116,7 +116,7 @@ export default function MoreProjects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="p-4 bg-black/5 dark:bg-white/10 backdrop-blur-md shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 flex flex-col gap-3 content-start"
+              className="p-4 bg-black/5 dark:bg-white/10 shadow-md shadow-indigo-950/50 dark:shadow-indigo-950 rounded-2xl transition hover:bg-white/10 dark:hover:bg-white/20 flex flex-col gap-3 content-start"
             >
               <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
                 {project.title}
