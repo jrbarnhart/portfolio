@@ -117,7 +117,7 @@ export default function FeaturedProjects() {
             <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-2xl md:text-3xl font-semibold">
               {projects[0].title}
             </h3>
-            <p className="grow text-md md:text-lg opacity-80">
+            <p className="grow [text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950  text-md md:text-lg opacity-80">
               {projects[0].description}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -156,7 +156,7 @@ export default function FeaturedProjects() {
                 <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
                   {project.title}
                 </h3>
-                <p className="grow text-sm md:text-base opacity-80">
+                <p className="grow [text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950  text-sm md:text-base opacity-80">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
