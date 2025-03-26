@@ -16,7 +16,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/joshuarbarnhart"
             target="_blank"
             rel="noopener noreferrer"
-            className="grow px-3 py-[18px] text-xl md:max-w-40 font-semibold bg-violet-500 hover:bg-violet-600 text-violet-50 rounded-lg transition flex justify-between items-center cursor-pointer"
+            className="grow basis-0 px-3 py-[18px] text-xl md:max-w-40 font-semibold bg-violet-500 hover:bg-violet-600 text-violet-50 rounded-lg transition flex justify-between items-center cursor-pointer"
           >
             LinkedIn
             <LinkedInIcon className="fill-white" />
@@ -25,7 +25,7 @@ export default function Contact() {
             href="https://github.com/jrbarnhart"
             target="_blank"
             rel="noopener noreferrer"
-            className="grow px-3 py-[18px] text-xl md:max-w-40 font-semibold bg-violet-500 hover:bg-violet-600 text-violet-50 rounded-lg transition flex justify-between items-center cursor-pointer"
+            className="grow basis-0 px-3 py-[18px] text-xl md:max-w-40 font-semibold bg-violet-500 hover:bg-violet-600 text-violet-50 rounded-lg transition flex justify-between items-center cursor-pointer"
           >
             GitHub
             <GitHubLogoIcon className="h-6 w-6" />

@@ -15,7 +15,7 @@ const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
         href={demoUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+        className="grow basis-0 md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
       >
         <span>View Project</span>
         <GlobeIcon className="h-6 w-6" />
@@ -23,8 +23,8 @@ const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
     );
 
   return (
-    <p className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer">
-      Demo Coming Soon
+    <p className="grow basis-0 md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer">
+      Demo Soon
     </p>
   );
 };
@@ -35,7 +35,7 @@ const CodeButton = ({ codeUrl }: { codeUrl: string }) => {
       href={codeUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="grow md:max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+      className="grow basis-0 md:max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span>View Code</span>
       <GithubIcon className="dark:fill-white" />
