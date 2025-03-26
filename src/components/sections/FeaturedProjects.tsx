@@ -4,6 +4,7 @@
 import { GlobeIcon } from "@radix-ui/react-icons";
 import GithubIcon from "../ui/GithubIcon";
 import gameOfLifeUrl from "../../assets/gameOfLife.png";
+import brighterMapUrl from "../../assets/brighterMapScreenshot.jpg";
 
 const DemoButton = () => {
   return (
@@ -64,7 +65,7 @@ export default function FeaturedProjects() {
       tech: ["React", "R3F", "TypeScript"],
       link: "#",
       isFeatured: false,
-      imageUrl: null,
+      imageUrl: brighterMapUrl,
     },
     {
       title: "Game of Life",
@@ -121,6 +122,14 @@ export default function FeaturedProjects() {
                 <h3 className="[text-shadow:_1px_1px_2px_var(--tw-shadow-color)] shadow-slate-500/50 dark:shadow-indigo-950 text-xl md:text-2xl font-semibold">
                   {project.title}
                 </h3>
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img
+                    src={project.imageUrl ?? ""}
+                    alt={project.title}
+                    className="w-full h-40 object-cover rounded-2xl opacity-90 hover:opacity-100 transition"
+                  />
+                </div>
+
                 <p className="text-sm md:text-base opacity-80">
                   {project.description}
                 </p>
