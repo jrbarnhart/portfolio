@@ -5,6 +5,7 @@ import { GlobeIcon } from "@radix-ui/react-icons";
 import GithubIcon from "../ui/GithubIcon";
 import gameOfLifeUrl from "../../assets/gameOfLife.png";
 import brighterMapUrl from "../../assets/brighterMapScreenshot.jpg";
+import brighterInterfaceUrl from "../../assets/brighterInterfaceScreenshot.jpg";
 
 const DemoButton = () => {
   return (
@@ -56,7 +57,7 @@ export default function FeaturedProjects() {
       tech: ["React", "Vite", "TypeScript"],
       link: "#",
       isFeatured: false,
-      imageUrl: null,
+      imageUrl: brighterInterfaceUrl,
     },
     {
       title: "Brighter Map",
