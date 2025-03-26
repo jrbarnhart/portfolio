@@ -8,27 +8,38 @@ import gameOfLifeUrl from "../../assets/gameOfLife.png";
 import brighterMapUrl from "../../assets/brighterMapScreenshot.jpg";
 import brighterInterfaceUrl from "../../assets/brighterInterfaceScreenshot.jpg";
 
-const DemoButton = () => {
+const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
+  if (demoUrl)
+    return (
+      <a
+        href={demoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+      >
+        <span>View Project</span>
+        <GlobeIcon className="h-6 w-6" />
+      </a>
+    );
+
   return (
-    <button
-      type="button"
-      className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
-    >
-      <span className="">View Project</span>
-      <GlobeIcon className="h-6 w-6" />
-    </button>
+    <p className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer">
+      Demo Coming Soon
+    </p>
   );
 };
 
-const CodeButton = () => {
+const CodeButton = ({ codeUrl }: { codeUrl: string }) => {
   return (
-    <button
-      type="button"
+    <a
+      href={codeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="grow md:max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
-      <span className="">View Code</span>{" "}
+      <span>View Code</span>
       <GithubIcon className="dark:fill-white" />
-    </button>
+    </a>
   );
 };
 
@@ -36,7 +47,8 @@ type FeaturedProject = {
   title: string;
   description: string;
   tech: string[];
-  link: string;
+  demoUrl: string | null;
+  codeUrl: string;
   isFeatured: boolean;
   imageUrl: string | null;
 };
@@ -46,9 +58,10 @@ export default function FeaturedProjects() {
     {
       title: "Brighter API",
       description:
-        "A REST API for Brighter Shores game data, powering interactive tools.",
+        "A REST API for getting data about Brighter Shores, a new MMO from the creator of Runescape. Can be used to power interactive tools like Brighter Map.",
       tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma"],
-      link: "#",
+      demoUrl: "https://brshapi.com",
+      codeUrl: "https://github.com/jrbarnhart/brighter-api",
       isFeatured: true,
       imageUrl: brighterApiUrl,
     },
@@ -56,7 +69,8 @@ export default function FeaturedProjects() {
       title: "Brighter API Interface",
       description: "A front-end interface to interact with the Brighter API.",
       tech: ["React", "Vite", "TypeScript"],
-      link: "#",
+      demoUrl: null,
+      codeUrl: "https://github.com/jrbarnhart/brighter-api-interface",
       isFeatured: false,
       imageUrl: brighterInterfaceUrl,
     },
@@ -65,7 +79,8 @@ export default function FeaturedProjects() {
       description:
         "An interactive map for Brighter Shores with filtering and search.",
       tech: ["React", "R3F", "TypeScript"],
-      link: "#",
+      demoUrl: "https://joshuarbarnhart.com/map",
+      codeUrl: "https://github.com/jrbarnhart/brighter-shores-map",
       isFeatured: false,
       imageUrl: brighterMapUrl,
     },
@@ -74,7 +89,8 @@ export default function FeaturedProjects() {
       description:
         "A creative, interactive implementation of Conway's Game of Life.",
       tech: ["React", "Canvas", "Algorithms"],
-      link: "#",
+      demoUrl: "https://conway-life-simulation.netlify.app/",
+      codeUrl: "https://github.com/jrbarnhart/game-of-life",
       isFeatured: false,
       imageUrl: gameOfLifeUrl,
     },
@@ -115,8 +131,8 @@ export default function FeaturedProjects() {
               ))}
             </div>
             <div className="flex gap-4">
-              <DemoButton />
-              <CodeButton />
+              <DemoButton demoUrl={projects[0].demoUrl} />
+              <CodeButton codeUrl={projects[0].codeUrl} />
             </div>
           </div>
         </div>
@@ -154,8 +170,8 @@ export default function FeaturedProjects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <DemoButton />
-                  <CodeButton />
+                  <DemoButton demoUrl={project.demoUrl} />
+                  <CodeButton codeUrl={project.codeUrl} />
                 </div>
               </div>
             );
