@@ -9,7 +9,7 @@ const DemoButton = ({ link }: { link: string }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="grow  mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+    className="grow mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
   >
     <span>View Project</span>
     <GlobeIcon className="h-6 w-6" />
@@ -21,7 +21,7 @@ const CodeButton = ({ link }: { link: string }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="grow  mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+    className="grow mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
   >
     <span>View Code</span>
     <GithubIcon className="dark:fill-white" />
