@@ -7,15 +7,15 @@ import GithubIcon from "../ui/GithubIcon";
 const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
   if (!demoUrl) {
     return (
-      <p className="grow md:max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer">
-        Demo Coming Soon
+      <p className="grow basis-0 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center">
+        Demo Soon
       </p>
     );
   }
 
   if (demoUrl === "https://joshuarbarnhart.com") {
     return (
-      <p className="grow mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center">
+      <p className="grow basis-0 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center">
         You Are Here!
         <GlobeIcon className="h-6 w-6" />
       </p>
@@ -27,7 +27,7 @@ const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
       href={demoUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="grow mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+      className="grow basis-0 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span>View Project</span>
       <GlobeIcon className="h-6 w-6" />
@@ -40,7 +40,7 @@ const CodeButton = ({ codeUrl }: { codeUrl: string }) => (
     href={codeUrl}
     target="_blank"
     rel="noopener noreferrer"
-    className="grow mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
+    className="grow basis-0 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
   >
     <span>View Code</span>
     <GithubIcon className="dark:fill-white" />
@@ -89,16 +89,16 @@ const projects: MoreProject[] = [
     description:
       "A SPA tool that assists in returning vertices for custom drawn grid shapes.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: null,
+    codeUrl: "https://github.com/jrbarnhart/grid-shape-to-vertices",
   },
   {
     title: "Monty Hall Demo",
     description:
       "Interactive demonstration of the Monty Hall probability scenario.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://jrbarnhart.github.io/monty-hall/",
+    codeUrl: "https://github.com/jrbarnhart/monty-hall",
   },
 ];
 
