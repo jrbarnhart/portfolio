@@ -12,7 +12,7 @@ const DemoButton = () => {
   return (
     <button
       type="button"
-      className="grow max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center"
+      className="grow max-w-44 mt-2 px-3 py-1 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span className="">View Project</span>
       <GlobeIcon className="h-6 w-6" />
@@ -24,7 +24,7 @@ const CodeButton = () => {
   return (
     <button
       type="button"
-      className="grow max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center"
+      className="grow max-w-44 mt-2 px-3 py-2 text-sm font-semibold bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition flex justify-between items-center cursor-pointer"
     >
       <span className="">View Code</span>{" "}
       <GithubIcon className="dark:fill-white" />
