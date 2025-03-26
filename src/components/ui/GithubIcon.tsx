@@ -3,12 +3,13 @@ import { twMerge } from "tailwind-merge";
 type IconTypes = Omit<React.SVGAttributes<SVGSVGElement>, "path">;
 
 export default function GithubIcon({ ...props }: IconTypes) {
-  const { className } = props;
+  const { className, ...rest } = props;
   return (
     <svg
       viewBox="0 0 98 96"
       className={twMerge("fill-zinc-100 dark:fill-zinc-900 size-6", className)}
       xmlns="http://www.w3.org/2000/svg"
+      {...rest}
     >
       <path
         fillRule="evenodd"
