@@ -87,7 +87,7 @@ const projects: MoreProject[] = [
   {
     title: "Grid Shape to Vertices",
     description:
-      "A SPA tool that assists in returning vertices for custom drawn grid shapes.",
+      "A tool that assists in returning vertices for custom drawn grid shapes.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     demoUrl: "https://jrbarnhart.github.io/grid-shape-to-vertices/",
     codeUrl: "https://github.com/jrbarnhart/grid-shape-to-vertices",
