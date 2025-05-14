@@ -5,7 +5,7 @@ import { GlobeIcon } from "@radix-ui/react-icons";
 import GithubIcon from "../ui/GithubIcon";
 import brighterApiUrl from "../../assets/brighterApiScreenshot.jpg";
 import gameOfLifeUrl from "../../assets/gameOfLife.png";
-import brighterMapUrl from "../../assets/brighterMapScreenshot.jpg";
+import brighterMapUrl from "../../assets/brighterMapScreenshot.png";
 import brighterInterfaceUrl from "../../assets/brighterInterfaceScreenshot.jpg";
 
 const DemoButton = ({ demoUrl }: { demoUrl: string | null }) => {
