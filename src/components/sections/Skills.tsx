@@ -11,12 +11,15 @@ export default function Skills() {
       title: "Frontend",
       skills: ["React", "TailwindCSS", "Vite", "Remix/React Router"],
     },
-    { title: "Backend", skills: ["NestJS", "Prisma", "PostgreSQL", "Express"] },
+    {
+      title: "Backend",
+      skills: ["Node", "NestJS", "Prisma", "PostgreSQL", "Express"],
+    },
     { title: "Testing", skills: ["Jest", "Vitest", "Testing Library"] },
     { title: "DevOps", skills: ["Docker", "Nginx", "DigitalOcean", "PM2"] },
     {
       title: "Other Tools",
-      skills: ["Node", "Git", "Swagger/OpenAPI", "ESLint/Prettier", "Postman"],
+      skills: ["Git", "Swagger/OpenAPI", "ESLint/Prettier", "Postman"],
     },
   ];
 
