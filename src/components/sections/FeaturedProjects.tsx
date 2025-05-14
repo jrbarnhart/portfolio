@@ -69,7 +69,7 @@ export default function FeaturedProjects() {
       title: "Brighter API Interface",
       description: "A front-end interface to interact with the Brighter API.",
       tech: ["React", "Vite", "TypeScript"],
-      demoUrl: null,
+      demoUrl: "https://jrbarnhart.github.io/brighter-api-interface/",
       codeUrl: "https://github.com/jrbarnhart/brighter-api-interface",
       isFeatured: false,
       imageUrl: brighterInterfaceUrl,
@@ -79,7 +79,7 @@ export default function FeaturedProjects() {
       description:
         "An interactive map for Brighter Shores with filtering and search.",
       tech: ["React", "R3F", "TypeScript"],
-      demoUrl: "https://joshuarbarnhart.com/map",
+      demoUrl: "https://jrbarnhart.github.io/brighter-map/",
       codeUrl: "https://github.com/jrbarnhart/brighter-shores-map",
       isFeatured: false,
       imageUrl: brighterMapUrl,
